@@ -54,7 +54,13 @@ src: url("assets/fonts/Axiforma-Bold.eot?#iefix") format("embedded-opentype"),
 /////////////////////////////////
 
 
-
+.page-login {
+    .panel-header {
+        background-color: lighten($brand-blue, 5%) !important;
+        background-image: url(assets/images/neos-pattern.svg);
+        background-size: cover;
+    }
+}
 
 // Branding
 .branding {
@@ -63,10 +69,25 @@ src: url("assets/fonts/Axiforma-Bold.eot?#iefix") format("embedded-opentype"),
     padding-right: 0;
 
     .sidebar-closed & {
-        width: 100px;
+        // width: 100px;
     }
 }
 
+.logo-login {
+    margin-bottom: $size-30;
+}
+
+.neos-alt {
+    path {
+        fill: $primary !important;
+    }
+}
+
+.branding-sidebar {
+    img {
+        height: 20px;
+    }
+}
 
 .main-menu .menu-items .menu-item {
     & > a {
@@ -89,6 +110,7 @@ src: url("assets/fonts/Axiforma-Bold.eot?#iefix") format("embedded-opentype"),
     padding: 0;
     margin-bottom: $size-10;
     display: flex;
+    flex-wrap: wrap;
     align-items: stretch;
     margin-left: -$size / 2;
     margin-right: -$size / 2;
@@ -102,6 +124,11 @@ src: url("assets/fonts/Axiforma-Bold.eot?#iefix") format("embedded-opentype"),
         padding: $size-10 $size;
         margin-left: $size / 2;
         margin-right: $size / 2;
+        margin-bottom: $size-10;
+
+        @include breakpoint(sm) {
+            margin-bottom: 0;
+        }
 
         &:last-child {
             // margin-left: $size * 0.16 !important;

@@ -24,6 +24,7 @@ var src = {
 	js: 'src/assets/js/**/*.js',
 	// Vendors
 	modernizr: 'node_modules/npm-modernizr/modernizr.js',
+	chartjs: 'node_modules/chart.js/dist/Chart.min.js',
 	jquery: 'node_modules/jquery/dist/jquery.min.js'
 }
 
@@ -254,6 +255,7 @@ gulp.task('js-vendors', function() {
 	// Copy all vendors
 	return gulp.src([
 			src.modernizr,
+			src.chartjs,
 			src.jquery
 		])
 		.pipe(gulp.dest(build.vendors));
