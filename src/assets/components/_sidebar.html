@@ -1,0 +1,62 @@
+<!-- SiDEBAR -->
+<aside class="sidebar">
+
+	<!-- MAiN MENU -->
+	<nav class="main-menu">
+		<ul class="menu-items">
+			@@include('menu-items/menu-item.html', {
+				"active": "active",
+				"url": "/",
+				"icon": "dashboard",
+				"display-title": "",
+				"title": "Dashboard"
+			})
+			@@include('menu-items/menu-item.html', {
+				"active": "",
+				"url": "",
+				"icon": "reports",
+				"display-title": "",
+				"title": "Reports"
+			})
+			@@include('menu-items/menu-item.html', {
+				"active": "",
+				"url": "",
+				"icon": "reccomendations",
+				"display-title": "",
+				"title": "Reccomendations"
+			})
+			@@include('menu-items/menu-item.html', {
+				"active": "",
+				"url": "",
+				"icon": "automations",
+				"display-title": "",
+				"title": "Automations"
+			})
+			@@include('menu-items/menu-item-submenu.html', {
+				"active": "open",
+				"url": "#",
+				"icon": "configure",
+				"display-title": "",
+				"title": "Configure",
+				"submenu-active-one": "",
+				"submenu-active-two": "",
+				"submenu-active-three": "",
+				"submenu-url": "accounts.html",
+				"display-submenu-title": "",
+				"submenu-title-one": "Companies",
+				"submenu-title-two": "Accounts",
+				"submenu-title-three": "Cost centers"
+			})
+		</ul>
+	</nav>
+	<!-- /.main-menu -->
+
+	<div class="branding-sidebar">
+		<a href="https://www.neos.hr/" target="_blank">
+			<img src="assets/images/logo-neos.svg" alt="NEOS">
+		</a>
+		<span class="app-version">v1.0.0</span>
+	</div>
+	
+</aside>
+<!-- /.sidebar -->

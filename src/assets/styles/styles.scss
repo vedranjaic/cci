@@ -1,0 +1,128 @@
+// Initium
+@import "../../../node_modules/initium/src/assets/styles/_settings.scss";
+
+$page-sidebar-width: $sidebar-width * 1.735;
+$page-sidebar-profile-width: $sidebar-width * 1.5;
+$font-primary:      'Axiforma-Regular';
+$font-bold:         'Axiforma-Bold';
+$font: $font-primary;
+
+// $size: 0.8rem;
+$navbar-height: $size * 3.75; // 60px
+
+// $menu-item-active-bg-color: #6868FC;
+
+
+@import "../../../node_modules/initium/src/assets/styles/_framework.scss";
+@import "../../../node_modules/initium/src/assets/styles/_components.scss";
+@include breakpoint(lg) {
+    $page-sidebar-width: $sidebar-width * 2;
+}
+
+@font-face {
+    font-family: "Axiforma-Regular";
+    src: url("assets/fonts/Axiforma-Regular.eot");
+    src: url("assets/fonts/Axiforma-Regular.eot?#iefix") format("embedded-opentype"),
+      url("assets/fonts/Axiforma-Regular.woff") format("woff"),
+      url("assets/fonts/Axiforma-Regular.ttf") format("truetype"),
+      url("assets/fonts/Axiforma-Regular.svg#svgFontName") format("svg");
+}
+  
+@font-face {
+font-family: "Axiforma-Bold";
+src: url("assets/fonts/Axiforma-Bold.eot");
+src: url("assets/fonts/Axiforma-Bold.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/Axiforma-Bold.woff") format("woff"),
+    url("assets/fonts/Axiforma-Bold.ttf") format("truetype"),
+    url("assets/fonts/Axiforma-Bold.svg#svgFontName") format("svg");
+}
+
+/////////// TEMP
+/////////////////////////////////
+
+.table-responsive {
+    .panel-body & {
+        margin-left: -$size;
+        margin-right: -$size;
+    }
+}
+
+.main-menu .menu-items .menu-item.active > a {
+    pointer-events: all !important;
+}
+
+/////////////////////////////////
+
+
+
+
+// Branding
+.branding {
+    padding-top: $size * 0.8;
+    padding-bottom: $size * 0.8;
+    padding-right: 0;
+
+    .sidebar-closed & {
+        width: 100px;
+    }
+}
+
+
+.main-menu .menu-items .menu-item {
+    & > a {
+        @include hover {
+            background-color: grey(100);
+            color: grey(400);
+        }
+    }
+}
+
+
+
+// DASHBOARD
+.dash-graphs {
+    margin-bottom: $size-30;
+}
+
+// Page stats
+.page-stats {
+    padding: 0;
+    margin-bottom: $size-10;
+    display: flex;
+    align-items: stretch;
+    margin-left: -$size / 2;
+    margin-right: -$size / 2;
+
+    & > li {
+        background-color: $white;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: $size-10 $size;
+        margin-left: $size / 2;
+        margin-right: $size / 2;
+
+        &:last-child {
+            // margin-left: $size * 0.16 !important;
+            // margin-right: $size * 0.16 !important;
+        }
+
+        .page-stats--amount {
+            font-family: $font-bold;
+            font-size: $font-size-24;
+            color: theme-colors(primary);
+        }
+    }
+}
+
+
+.page-content {
+    align-items: stretch !important;
+    
+    .page-sidebar {
+        .panel {
+            height: 100%;
+        }
+    }
+}
