@@ -1,0 +1,75 @@
+@@include('assets/components/_head.html')
+
+	<div class="page-wizard">
+
+		<div class="content-container">
+
+				@@include('assets/components/_pages/wizard/_sidebar.html')
+
+				<div class="content">
+					
+					<div class="page-content">
+						
+						<section class="panel panel-page">
+			
+							<header class="panel-header">
+								<h3 class="page-title">Setup wizard</h3>
+							</header>
+							<!-- /.panel-header -->
+
+							<ol class="wizard-steps" start="0">
+								<li class="wizard-step step-start ">
+									<a href="#">
+										<i class="icon fa fa-home"></i>
+									</a>
+								</li>
+								<li class="wizard-step active">
+									<a href="#">
+										<h6 class="wizard-step--title">Company info</h6>
+										<small class="wizard-step--subtitle">Tell us about the company</small>
+									</a>
+								</li>
+								<li class="wizard-step">
+									<a href="#">
+										<h6 class="wizard-step--title">Cloud provireds</h6>
+										<small class="wizard-step--subtitle">Which provider do you use?</small>
+									</a>
+								</li>
+								<li class="wizard-step">
+									<a href="#">
+										<h6 class="wizard-step--title">Set up Cloud account</h6>
+										<small class="wizard-step--subtitle">Let's set it up for you</small>
+									</a>
+								</li>
+								<li class="wizard-step">
+									<a href="#">
+										<h6 class="wizard-step--title">Finish</h6>
+										<small class="wizard-step--subtitle">You're all done!</small>
+									</a>
+								</li>
+							</ol>
+						
+							<div class="panel-body">
+									This wizard is a help tool to make your experience configuring access to your cloud resources as easy as possible. 
+
+									You will be guided to enter necessary information in order to use a full potential of this application. 
+							</div>
+							<!-- /.panel-body -->    
+							
+						</section>
+						<!-- /.panel -->
+			
+					</div>
+					<!-- /.page-content -->
+			
+			
+				</div>
+				<!-- /.content -->
+		
+		</div>
+		<!-- /.content-container -->
+
+	</div>
+	<!-- /.page-wizard -->
+
+@@include('assets/components/_footer.html')

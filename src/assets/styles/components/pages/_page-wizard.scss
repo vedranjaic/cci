@@ -1,0 +1,235 @@
+// PAGE WiZARD
+.page-wizard {
+    // Content container
+    .content-container {
+        flex-direction: column;
+
+        @include breakpoint(md) {
+            flex-direction: row;
+        }
+    }
+
+    // Sidebar
+    .sidebar {
+        height: auto;
+        border-bottom: 1px solid grey(100);
+        width: 100%;
+
+        @include breakpoint(md) {
+            height: 100vh;
+            border-bottom: 0;
+            width: $sidebar-width;
+        }
+    }
+
+    // Content
+    .content {
+        padding: 0;
+        width: 100%;
+
+        @include breakpoint(md) {
+            width: calc(100vw - #{$sidebar-width});
+        }
+    }
+
+    // Panel
+    .panel-header {
+        padding: $size $size $size * 1.5;
+        border-bottom: 1px solid grey(100);
+        
+        @include breakpoint(md) {
+            padding: $size * 1.9 $size * 2;
+        }
+    }
+
+    .panel-body {
+        padding: $size $size $size * 1.5;
+        @include breakpoint(md) {
+            padding: $size * 1.9 $size * 2;
+        }
+    }
+}
+
+// Wizard steps
+.wizard-steps {
+    display: flex;
+    counter-reset: wizard-step-counter;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid grey(100);
+
+    // Wizard step
+    .wizard-step {
+        @include transition(background-color);
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        min-width: 0;
+
+        @include breakpoint(sm) {
+            justify-content: flex-start;
+        }
+
+        // First step
+        &.step-start {
+            padding: $size 0;
+
+            @include breakpoint(sm) {
+                padding: $size;
+                flex: initial;
+            }
+
+            &.active {
+                @include breakpoint(sm) {
+                    flex: initial;
+                }
+            }
+        }
+        
+        // Except home button
+        &:not(.step-start) {
+            counter-increment: wizard-step-counter;
+            
+            &::before {
+                content: counter(wizard-step-counter);
+                padding: $size $size / 2 $size $size * 1.2;
+                
+                @include breakpoint(sm) {
+                    padding: $size $size $size $size * 1.5;
+                }
+            }
+
+            @include breakpoint(sm) {
+                flex: initial;
+            }
+
+            @include breakpoint(md) {
+                flex: initial;
+            }
+
+            @include breakpoint(lg) {
+                flex: 1;
+            }
+        }
+
+        // Except last step
+        &:not(:last-child) {
+            a {
+                min-width: 0;
+
+                &::before,
+                &::after {
+                    content: " ";
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    border-top: 27px solid transparent;
+                    border-bottom: 27px solid transparent;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -27px;
+                    left: 100%;
+
+                }
+                &::after {
+                    border-left: 10px solid grey(100);
+                    margin-left: 1px;
+                    z-index: 1;
+                }
+                &::before {
+                    @include transition(border-color);
+                    border-left: 10px solid $white;
+                    margin-left: 0;
+                    z-index: 2;
+                }
+            }
+        }
+
+        &:not(.active) {
+            .wizard-step--title,
+            .wizard-step--subtitle {
+                display: none;
+                
+                @include breakpoint(lg) {
+                    display: flex;
+                }
+            }
+        }
+
+        // Active step
+        &.active {
+            flex: 1;
+            background-color: $primary;
+
+            &::before {
+                color: $white;
+            }
+
+            a {
+                color: $white;
+
+                &::before {
+                    border-left-color: $primary;
+                }
+                &::after {
+                    border-left-width: 0;
+                }
+
+                .wizard-step--title,
+                .wizard-step--subtitle {
+                    display: none;
+
+                    @include breakpoint(sm) {
+                        display: flex;
+                    }
+                }
+
+                .wizard-step--title {
+                    color: $white;
+                }
+            }
+        }
+
+        // Hovered and focused step
+        @include hover-focus {
+            cursor: pointer;
+            background-color: $primary;
+
+            &::before {
+                color: $white;
+            }
+
+            a {
+                color: $white;
+
+                &::before {
+                    border-left-color: $primary;
+                }
+                &::after {
+                    border-left-width: 0;
+                }
+
+                .wizard-step--title {
+                    color: $white;
+                }
+            }
+        }
+
+        // Step title
+        .wizard-step--title {
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        // Step subtitle
+        .wizard-step--subtitle {
+            @extend %text-overflow;
+            font-family: $font-light;
+            text-transform: uppercase;
+            font-size: $font-size-10;
+        }
+    }
+}

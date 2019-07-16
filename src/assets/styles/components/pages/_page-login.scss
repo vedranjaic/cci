@@ -1,0 +1,13 @@
+// PAGE LOGiN
+.page-login {
+    .panel-header {
+        background-color: lighten($brand-blue, 5%) !important;
+        background-image: url(assets/images/neos-pattern.svg);
+        background-size: cover;
+    }
+
+    // Logo
+    .logo-login {
+        margin-bottom: $size-30;
+    }
+}
