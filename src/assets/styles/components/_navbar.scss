@@ -1,0 +1,13 @@
+// Navbar
+.navbar {
+    // Navbar actions
+    .navbar-actions {
+        .navbar-action {
+            &.open {
+                .dropdown-toggle {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

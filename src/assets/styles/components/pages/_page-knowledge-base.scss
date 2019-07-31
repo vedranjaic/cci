@@ -1,0 +1,81 @@
+// Knowledge base
+.page-knowledge-base {
+    .container {
+        @include breakpoint(md) {
+            padding-bottom: $size * 4;
+        }
+    }
+
+    //Template
+    .content {
+        height: auto;
+        overflow-y: initial;
+    }
+
+    .page-content {
+        margin-top: -$size * 5;
+    }
+
+    // Hero
+    .hero {
+        padding-bottom: $size * 7;
+
+        @include breakpoint(xxl) {
+            height: auto;
+        }
+    }
+
+    // Panels
+    .panel {
+        margin-bottom: $size;
+
+        @include breakpoint(xl) {
+            margin-bottom: 0;
+        }
+
+        .list-group-item {
+            @include hover-focus {
+                color: $primary;
+            }
+        }
+        // .panel-header {
+        //     background-color: $brand-purple-dark;
+        //     color: $white;
+        // }
+    }
+
+    // FAQ list
+    .faq-list {
+        margin-top: $size * 2;
+
+        @include breakpoint(xxl) {
+            margin-top: $size * 3;
+        }
+        .list-group-item {
+            // border-bottom: 1px dotted grey(200);
+            
+            a {
+                display: block;
+                position: relative;
+                padding-left: 0;
+                padding-right: $size;
+                padding-top: $size;
+                padding-bottom: $size;
+
+                &::after {
+                    content: '\f105';
+                    font-family: $font-fa;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    margin-top: -0.5em;
+                    font-size: 1em;
+                }
+
+                @include hover-focus {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

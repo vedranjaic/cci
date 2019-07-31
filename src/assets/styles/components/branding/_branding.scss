@@ -1,14 +1,7 @@
 // Branding
 .branding {
-    padding-top: $size * 0.8;
-    padding-bottom: $size * 0.8;
-    padding-right: 0;
-    padding-left: $size;
     flex-direction: row;
-
-    @include breakpoint(sm) {
-        padding-left: $size !important;
-    }
+    height: $size * 2;
 
     .sidebar-closed & {
         // width: 100px;

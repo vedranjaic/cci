@@ -1,0 +1,74 @@
+@@include('assets/components/_head.html')
+
+	<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+	
+	<div class="container">
+		
+		
+		@@include('assets/components/_navbar.html')
+
+		
+		<div class="content-container">
+			
+			@@include('assets/components/_sidebar.html')
+
+			<div class="content">
+				
+				<div class="page-content">
+					
+					<!-- DASHBOARD -->
+					@@include('assets/components/_pages/dashboard/_dashboard.html')
+
+				</div>
+				<!-- /.page-content -->
+				
+				<div class="page-content page-sidebar--true">
+					
+					@@include('assets/components/page/_page-panel.html')
+
+					@@include('assets/components/page/_page-sidebar.html', {
+						"page-sidebar--heading-hidden": "hidden"
+					})
+										
+				</div>
+				<!-- /.page-content -->
+				
+				<div class="page-content">
+					
+					<section class="panel panel-page">
+
+						<header class="panel-header">
+							<h4 class="page-title">Current Spend Cost Centers and Cost Groups</h4>
+						</header>
+						<!-- /.panel-header -->
+					
+						<div class="panel-body">
+					
+							@@include('assets/components/table/_table.html', {
+								"table-class": "table table-hover"
+							})
+					
+						</div>
+						<!-- /.panel-body -->    
+						
+					</section>
+					<!-- /.panel -->
+
+				</div>
+				<!-- /.page-content -->
+
+
+			</div>
+			<!-- /.content -->
+
+		</div>
+		<!-- /.content-container -->
+
+	</div>
+	<!-- /.container -->
+
+
+@@include('assets/components/_footer.html')

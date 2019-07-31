@@ -1,0 +1,87 @@
+// SUPPORT
+.support {
+    margin-top: $size;
+    
+    @include breakpoint(lg) {
+        margin-top: $size * 2;
+        border-top: 1px solid grey(200);
+    }
+    
+    @include breakpoint(xl) {
+        margin-top: $size * 4;
+    }
+
+    @include breakpoint(xxl) {
+        margin-bottom: $size * 2;
+    }
+
+    [class*='col-']:not(:last-child) {
+        border-right: 1px solid grey(200);
+    }
+}
+
+// CONTACT
+.support-contact {
+    display: flex;
+    align-items: center;
+    padding-top: $size;
+    padding-bottom: $size * 2;
+    
+    @include breakpoint(xl) {
+        padding-top: $size * 2;
+        padding-bottom: $size * 5;
+    }
+    
+    // Shared mail and phone styles
+    &.support-contact--mail,
+    &.support-contact--phone {
+        .support-contact--content {
+            flex: 1;
+            text-align: center;
+        }
+        .icon {
+            transform: scale(0.7);
+            margin-left: $size * 2;
+            margin-right: $size * 2;
+
+            @include breakpoint(xxl) {
+                transform: scale(1);
+            }
+        }
+    }
+    
+    // Support by mail
+    &.support-contact--mail {
+        flex-direction: column-reverse;
+
+        @include breakpoint(xxl) {
+            flex-direction: row;
+        }
+        
+        .support-contact--content {
+            @include breakpoint(xxl) {
+                text-align: right;
+            }
+        }
+    }
+    
+    // Support by phone
+    &.support-contact--phone {
+        flex-direction: column;
+
+        @include breakpoint(xxl) {
+            flex-direction: row;
+        }
+
+        .support-contact--content {
+            @include breakpoint(xxl) {
+                text-align: left;
+            }
+        }
+    }
+
+    .lead {
+        margin-top: 0.5em;
+        margin-bottom: 0;
+    }
+}

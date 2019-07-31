@@ -1,0 +1,131 @@
+// Panel summary
+.panel-summary {
+    .panel-header {
+        border-bottom: 0;
+    }
+
+    .panel-body {
+        border: 1px solid grey(200);
+        border-top: 0;
+        padding: 0;
+    }
+
+    ul {
+        padding: 0;
+        padding-bottom: 0.5em;
+    }
+}
+
+// Unstyle the list
+.summary-treeview,
+.summary-treeview--node {
+    list-style: none;
+}
+
+// Main nodes (Company + cloud)
+.summary-treeview {
+    font-size: $font-size-18;
+    margin: 0;
+    padding: 0;
+
+    .summary-company,
+    .summary-cloud {
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        position: relative;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.3em;
+
+        &::before {
+            position: absolute;
+            left: -$size / 4;
+            font-family: $font-fa;
+            font-size: 1.2em;
+        }
+    }
+
+    .summary-company {
+        border-top: 1px solid grey(200);
+        border-bottom: 1px solid grey(200);
+        padding-top: $size;
+        padding-bottom: $size;
+        padding-left: $size * 3.75; // 60px
+
+        &::before {
+            left: $size * 1.875;
+        }
+
+        & + .summary-treeview--node {
+            padding-left: $size * 1.875;
+        }
+    }
+    
+    .summary-success {
+        &::before {
+            content: '\f058';
+            color: $green;
+        }
+    }
+    
+    .summary-warning {
+        &::before {
+            content: '\f017';
+            color: $yellow;
+        }
+    }
+    
+    .summary-cloud {
+        // If we need pricing budget
+        // border-bottom: 1px dotted grey(200);
+
+        &::before {
+            content: '\f0c2';
+            color: grey(200);
+        }
+
+        & + .summary-treeview--node {
+            li {
+                margin-bottom: $size / 4;
+            }
+        }
+    }
+}
+
+// Treeview nodes
+.summary-treeview--node {
+    position: relative;
+    padding: 0;
+
+    li {
+        position: relative;
+        border-left: 2px dotted grey(200);
+        padding-left: 40px;
+        margin-left: 8px;
+        
+        &:last-child {
+            border-left-color: transparent;
+        }
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: -0.5em;
+            left: -2px;
+            width: $size * 1.5;
+            height: 1.1em;
+            border-left: 2px dotted grey(200);
+            border-bottom: 2px dotted grey(200);
+        }
+
+        // Complete node
+        &.complete {
+            border-left-style: solid;
+
+            &::before {
+                border-left-style: solid;
+                border-bottom-style: solid;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+// TYPOGRAPHY
+@font-face {
+    font-family: "Axiforma-Light";
+    src: url("assets/fonts/Axiforma-Light.eot");
+    src: url("assets/fonts/Axiforma-Light.eot?#iefix") format("embedded-opentype"),
+      url("assets/fonts/Axiforma-Light.woff") format("woff"),
+      url("assets/fonts/Axiforma-Light.ttf") format("truetype"),
+      url("assets/fonts/Axiforma-Light.svg#svgFontName") format("svg");
+}
+
+@font-face {
+    font-family: "Axiforma-Regular";
+    src: url("assets/fonts/Axiforma-Regular.eot");
+    src: url("assets/fonts/Axiforma-Regular.eot?#iefix") format("embedded-opentype"),
+      url("assets/fonts/Axiforma-Regular.woff") format("woff"),
+      url("assets/fonts/Axiforma-Regular.ttf") format("truetype"),
+      url("assets/fonts/Axiforma-Regular.svg#svgFontName") format("svg");
+}
+  
+@font-face {
+    font-family: "Axiforma-Bold";
+    src: url("assets/fonts/Axiforma-Bold.eot");
+    src: url("assets/fonts/Axiforma-Bold.eot?#iefix") format("embedded-opentype"),
+        url("assets/fonts/Axiforma-Bold.woff") format("woff"),
+        url("assets/fonts/Axiforma-Bold.ttf") format("truetype"),
+        url("assets/fonts/Axiforma-Bold.svg#svgFontName") format("svg");
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-bold;
+}
+
+.lead {
+  font-family: $font-light;
+}

@@ -9,49 +9,95 @@
 
 // CCi framework
 @import "framework/template";
+@import "framework/typography";
 
 // CCi components
+@import "components/navbar";
+@import "components/footer-main";
 @import "components/branding/branding";
+@import "components/pages/page-index";
 @import "components/pages/page-dashboard";
 @import "components/pages/page-login";
 @import "components/pages/page-wizard";
+@import "components/pages/page-knowledge-base";
+@import "components/pages/page-knowledge-base-all";
 @import "components/page/page-panel";
+@import "components/hero/hero";
+@import "components/support/support";
+@import "components/collapse/collapse";
+@import "components/summary-treeview/summary-treeview";
 
-@font-face {
-    font-family: "Axiforma-Light";
-    src: url("assets/fonts/Axiforma-Light.eot");
-    src: url("assets/fonts/Axiforma-Light.eot?#iefix") format("embedded-opentype"),
-      url("assets/fonts/Axiforma-Light.woff") format("woff"),
-      url("assets/fonts/Axiforma-Light.ttf") format("truetype"),
-      url("assets/fonts/Axiforma-Light.svg#svgFontName") format("svg");
-}
 
-@font-face {
-    font-family: "Axiforma-Regular";
-    src: url("assets/fonts/Axiforma-Regular.eot");
-    src: url("assets/fonts/Axiforma-Regular.eot?#iefix") format("embedded-opentype"),
-      url("assets/fonts/Axiforma-Regular.woff") format("woff"),
-      url("assets/fonts/Axiforma-Regular.ttf") format("truetype"),
-      url("assets/fonts/Axiforma-Regular.svg#svgFontName") format("svg");
-}
-  
-@font-face {
-font-family: "Axiforma-Bold";
-src: url("assets/fonts/Axiforma-Bold.eot");
-src: url("assets/fonts/Axiforma-Bold.eot?#iefix") format("embedded-opentype"),
-    url("assets/fonts/Axiforma-Bold.woff") format("woff"),
-    url("assets/fonts/Axiforma-Bold.ttf") format("truetype"),
-    url("assets/fonts/Axiforma-Bold.svg#svgFontName") format("svg");
-}
 
 /////////// TEMP
 /////////////////////////////////
 
-
-
 // .main-menu .menu-items .menu-item.active > a {
 //     pointer-events: all !important;
 // }
+
+// Visibility
+.visible-sm {
+    display: inline;
+
+    @include breakpoint(md) {
+        display: none;
+    }
+}
+
+.invisible-sm {
+    display: none;
+
+    @include breakpoint(md) {
+        display: inline;
+    }
+}
+
+// List numbers
+.list-numbers {
+    counter-reset: list-numbers;
+    list-style: none;
+    padding-left: $size * 1.5;
+
+    li {
+        margin-top: $size !important;
+        margin-bottom: $size !important;
+        counter-increment: list-numbers;
+
+        &::before {
+            content: counter(list-numbers);
+            background-color: $green;
+            display: inline-block;
+            width: $size * 1.6;
+            height: $size * 1.6;
+            line-height: $size * 1.7;
+            border-radius: $size * 1.6;
+            margin-right: $size;
+            font-size: $font-size-14;
+            text-align: center;
+            vertical-align: text-bottom;
+            color: $white;
+        }
+    }
+}
+
+.cloud-bg {
+    display: block;
+
+    @include breakpoint(md) {
+        position: fixed;
+        bottom: 30px;
+        z-index: -1;
+    }
+}
+
+$cloud-color: lighten($brand-blue, 78%);
+
+@for $i from 1 through 5 {
+    .cloud-#{$i} {
+        fill: darken($cloud-color, $i * 5%);
+    }
+}
 
 /////////////////////////////////
 
@@ -72,9 +118,3 @@ src: url("assets/fonts/Axiforma-Bold.eot?#iefix") format("embedded-opentype"),
         }
     }
 }
-
-
-
-
-
-

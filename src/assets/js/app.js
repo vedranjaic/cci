@@ -90,7 +90,31 @@ $('.panel-header a').click(function() {
     $(this).children('.icon').toggleClass('fa-plus fa-minus')
 })
 
+// Collapser
+$('.collapse-toggle').click(function(e) {
+    e.preventDefault()
+    $(this).parent().toggleClass('collapse-open-true');
+})
+$('.faq .collapse-toggle').click(function(e) {
+    e.preventDefault()
+    $(this).parent().toggleClass('active');
+})
 
+// TEMP COLLAPSE
+$('#temp-help-01-toggle').click(function(e) {
+    e.preventDefault()
+    $('#temp-help-01').toggleClass('collapse-open-true label-help').delay(1000).queue(function(next){
+        $(this).removeClass('label-help');
+        next();
+    });
+})
+$('#temp-help-02-toggle').click(function(e) {
+    e.preventDefault()
+    $('#temp-help-02').toggleClass('collapse-open-true label-help').delay(1000).queue(function(next){
+        $(this).removeClass('label-help');
+        next();
+    });
+})
 
 
 

@@ -1,0 +1,394 @@
+<section class="panel panel-page panel-wizard">
+
+	<div class="alert alert-success">
+		<p class="lead">
+			<strong>Setup Queue:</strong><br>
+			You will <strong>Add another Cloud Account</strong> to <strong>Microsoft Azure</strong> provider in <strong>NEOS d.o.o.</strong> after finishing this setup wizard.
+		</p>
+		<a href="#"><i class="icon fa fa-times" aria-hidden="true"></i></a>
+	</div>
+
+	<header class="panel-header">
+		<h3 class="page-title">Setup wizard</h3>
+	</header>
+	<!-- /.panel-header -->
+
+	<ol class="wizard-steps" start="0">
+		<li class="wizard-step step-start completed">
+			<a href="#">
+				<i class="icon fa fa-home"></i>
+			</a>
+		</li>
+		<li class="wizard-step completed">
+			<a href="#">
+				<h6 class="wizard-step--title">Company info</h6>
+				<small class="wizard-step--subtitle">Tell us about the company</small>
+			</a>
+		</li>
+		<li class="wizard-step completed">
+			<a href="#">
+				<h6 class="wizard-step--title">Cloud providers</h6>
+				<small class="wizard-step--subtitle">Which provider do you use?</small>
+			</a>
+		</li>
+		<li class="wizard-step active">
+			<a href="#">
+				<h6 class="wizard-step--title">Set up Cloud account</h6>
+				<small class="wizard-step--subtitle">Let's set it up for you</small>
+			</a>
+		</li>
+		<li class="wizard-step">
+			<a href="#">
+				<h6 class="wizard-step--title">Summary</h6>
+				<small class="wizard-step--subtitle">You're all done!</small>
+			</a>
+		</li>
+	</ol>
+
+	<div class="panel-body">
+
+		<!-- STEP ABOUT WiZARD -->
+		<div class="panel-step">
+
+			<div class="grid">
+				<div class="col-md-8 col-md-offset-2 text-center">
+
+					<h4 class="panel-step--title">This wizard is a help tool to make your experience configuring access to your cloud resources as easy as possible.</h4>
+					<p class="lead">
+						You will be guided to enter necessary information in order to use a full potential of this application.
+					</p>
+
+				</div>
+			</div>
+			<!-- /.grid -->
+
+		</div>
+		<!-- /.panel-step -->
+
+		<!-- STEP COMPANY iNFO -->
+		<div class="panel-step">
+
+			<div class="grid">
+				<div class="col-lg-8 col-xl-6 col-xxl-4">
+
+					<div class="panel-step--info">
+						<h4 class="panel-step--title">Company info</h4>
+						<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi recusandae odio illum facere asperiores magni nemo ipsa corrupti quam velit?</p>
+					</div>
+					<!-- /.panel-step--info -->
+
+				</div>
+				<div class="col-xxl-8">
+
+					<form action="#" class="panel-step--form">
+						<div class="grid">
+							<div class="col-md-6">
+								<div class="form-group form-column">
+									<label for="company-name">Company name</label>
+									<input type="text" class="form-element" id="company-name" name="company-name" required="" minlength="4" maxlength="50">
+								</div>
+								<div class="form-group form-column">
+									<label for="company-address">Address</label>
+									<input type="text" class="form-element" id="company-address" name="company-address" required="" minlength="4" maxlength="50">
+								</div>
+								<div class="form-group form-column">
+									<label for="company-zip">ZIP / Postal code</label>
+									<input type="text" class="form-element" id="company-zip" name="company-zip" required="" minlength="4" maxlength="5">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group form-column">
+									<label for="company-city">City</label>
+									<input type="text" class="form-element" id="company-city" name="company-city" required="" minlength="4" maxlength="20">
+								</div>
+								<div class="form-group form-column">
+									<label for="company-state">State / Province</label>
+									<input type="text" class="form-element" id="company-state" name="company-state">
+								</div>
+								<div class="form-group form-column">
+									<label for="company-country">Country</label>
+									<select class="form-element" name="company-country" id="company-country">
+										<option value="Company 1">Croatia</option>
+										<option value="Slovenia">Slovenia</option>
+										<option value="Hungary">Hungary</option>
+										<option value="Italy">Italy</option>
+									</select>
+								</div>
+							</div>
+
+						</div>
+						<!-- /.grid -->
+					</form>
+					<!-- /.panel-step--form -->
+
+				</div>
+			</div>
+			<!-- /.grid -->
+
+
+
+		</div>
+		<!-- /.panel-step -->
+
+		<!-- STEP CLOUD PROViDERS -->
+		<div class="panel-step">
+
+			<div class="grid">
+				<div class="col-lg-8 col-xl-6 col-xxl-4">
+
+					<div class="panel-step--info">
+						<h4 class="panel-step--title">Cloud providers</h4>
+						<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi recusandae odio illum facere asperiores magni nemo ipsa corrupti quam velit?</p>
+					</div>
+					<!-- /.panel-step--info -->
+
+				</div>
+				<div class="col-xxl-8">
+
+					<form action="#" class="panel-step--form">
+						<div class="grid">
+							<div class="form-radio form-radio--cloud col-sm-4">
+								<input type="radio" id="cloud-oci" name="cloud" value="cloud-oci">
+								<label for="cloud-oci">
+									<img src="assets/images/logo-oci.svg" alt="Oracle Cloud">
+								</label>
+							</div>
+							<div class="form-radio form-radio--cloud coming-soon col-sm-4">
+								<input type="radio" id="cloud-azure" name="cloud" value="cloud-azure">
+								<label for="cloud-azure">
+									<img src="assets/images/logo-azure.svg" alt="Azure">
+								</label>
+							</div>
+							<div class="form-radio form-radio--cloud coming-soon col-sm-4">
+								<input type="radio" id="cloud-aws" name="cloud" value="cloud-aws">
+								<label for="cloud-aws">
+									<img src="assets/images/logo-aws.svg" alt="Amazon Web Services">
+								</label>
+							</div>
+						</div>
+						<!-- /.grid -->
+					</form>
+
+				</div>
+			</div>
+			<!-- /.grid -->
+		</div>
+		<!-- /.panel-step -->
+
+		<!-- STEP CLOUD ACCOUNT -->
+		<div class="panel-step">
+
+			<div class="grid">
+				<div class="col-lg-8 col-xl-6 col-xxl-4">
+
+					<div class="panel-step--info">
+						<h4 class="panel-step--title">Set up Cloud account</h4>
+						<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi recusandae odio illum facere asperiores magni nemo ipsa corrupti quam velit?</p>
+
+						<h6 class="text-danger text-uppercase"><small>Prerequisites</small></h6>
+
+						<div class="collapse" id="temp-help-01">
+							<a href="#" class="panel-step--subtitle collapse-toggle">
+								Cloud Account configuration instructions
+								<i class="icon fa fa-angle-down collapser"></i>
+							</a>
+							<div class="collapse-container">
+								<p>Account must have certain roles assigned</p>
+								<ul class="list-arrows">
+									<li><a href="https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/meter/QuickStart.html" target="_blank">Get the Required Roles Assigned</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /.collapse -->
+
+						<div class="collapse" id="temp-help-02">
+							<a href="#" class="panel-step--subtitle collapse-toggle">
+								Cloud API key configuration instructions
+								<i class="icon fa fa-angle-down collapser"></i>
+							</a>
+							<div class="collapse-container">
+								<p>Please finish this set of steps in order to add a functional API key to the application.</p>
+								<ul class="list-arrows">
+									<li><a href="https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How" target="_blank">How to Generate an API Signing Key</a></li>
+									<li><a href="https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How3" target="_blank">How to Get the Key's Fingerprint</a></li>
+									<li><a href="https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#Other" target="_blank">Where to Get the Tenancy's and User's OCID</a></li>
+									<li><a href="https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How2" target="_blank">How to Upload the Public Key</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /.collapse -->
+					</div>
+					<!-- /.panel-step--info -->
+
+				</div>
+				<div class="col-xxl-8">
+
+					<form action="#" class="panel-step--form">
+						<div class="grid">
+							<div class="col-md-6">
+								<div class="form-group form-column">
+									<label for="cloud-admin-username" class="label-anchor">
+										Cloud admin username
+										<a href="#" id="temp-help-01-toggle">Help</a>
+									</label>
+									<input type="text" class="form-element" id="cloud-admin-username" name="cloud-admin-username" required="" minlength="4" maxlength="50">
+								</div>
+								<div class="form-group form-column">
+									<label for="cloud-admin-password">Cloud admin password</label>
+									<input type="password" class="form-element" id="cloud-admin-password" name="cloud-admin-password" minlength="8" required="">
+								</div>
+								<div class="form-group form-column">
+									<label for="cloud-account-id">Cloud account ID</label>
+									<input type="text" class="form-element" id="cloud-account-id" name="cloud-account-id" required="" minlength="4" maxlength="50">
+								</div>
+								<div class="form-group form-column">
+									<label for="cloud-identity-service-id">Identity service ID</label>
+									<input type="text" class="form-element" id="cloud-identity-service-id" name="cloud-identity-service-id" required="" minlength="4" maxlength="50">
+								</div>
+								<div class="form-group form-column">
+									<label for="cloud-api" class="label-anchor">
+										Cloud API key
+										<a href="#" id="temp-help-02-toggle">Help</a>
+									</label>
+									<input type="text" class="form-element" id="cloud-api" name="cloud-api" required="" minlength="4" maxlength="50">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group form-column">
+									<label for="cloud-company">Company</label>
+									<select class="form-element" name="cloud-company" id="cloud-company">
+										<option value="Croatia">Company 1</option>
+									</select>
+								</div>
+								<div class="form-group form-column">
+									<label for="cloud-time-zone">Time zone</label>
+									<select class="form-element" name="cloud-time-zone" id="cloud-time-zone">
+										<option value="Croatia">UTC +1</option>
+										<option value="Slovenia">UTC +2</option>
+										<option value="Hungary">GMT +1</option>
+										<option value="Italy">GMT +2</option>
+									</select>
+								</div>
+								<img src="assets/images/timezoneselector.png" alt="" class="img-responsive">
+							</div>
+
+						</div>
+						<!-- /.grid -->
+					</form>
+					<!-- /.panel-step--form -->
+
+				</div>
+			</div>
+			<!-- /.grid -->
+
+
+
+		</div>
+		<!-- /.panel-step -->
+
+		<!-- STEP SUMMARY -->
+		<div class="panel-step">
+
+			<div class="grid">
+				<div class="col-xxl-6">
+
+					<div class="panel-step--info">
+						<h4 class="panel-step--title">Summary</h4>
+						<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi recusandae odio illum facere asperiores magni nemo ipsa corrupti quam velit?</p>
+					</div>
+					<!-- /.panel-step--info -->
+
+				</div>
+
+				<div class="col-xxl-6">
+
+					<div class="panel panel-success panel-summary">
+
+						<header class="panel-header">
+							<h3 class="panel-title">Setup summary</h3>
+						</header>
+						<!-- /.panel-header -->
+
+						<div class="panel-body">
+
+							<ul class="summary-treeview ">
+								<li>
+									<a href="#" class="summary-company summary-success">NEOS d.o.o.</a>
+									<ul class="summary-treeview--node">
+										<li class="complete">
+											<a href="#" class="summary-cloud">Oracle Cloud</a>
+											<ul class="summary-treeview--node">
+												<li class="complete">
+													<a href="#">
+														Cloud account
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li class="complete">
+											<a href="#" class="summary-cloud">Microsoft Azure</a>
+											<ul class="summary-treeview--node">
+												<li class="complete">
+													<a href="#">
+														Cloud account
+													</a>
+												</li>
+												<li>
+													<a href="#" class="btn btn-success btn-xs">Add another Cloud account</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#" class="btn btn-success btn-xs">Add another Cloud provider</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+
+						</div>
+						<!-- /.panel-body -->
+
+					</div>
+					<!-- /.panel -->
+
+				</div>
+
+			</div>
+			<!-- /.grid -->
+
+		</div>
+		<!-- /.panel-step -->
+
+	</div>
+	<!-- /.panel-body -->
+	
+	<nav class="wizard-navigation">
+		<ul class="wizard-navs">
+			<li>
+				<a href="#" class="wizard-nav wizard-nav--prev disabled">
+					<div class="previous-page">
+						<div class="page-arrow"><i class="icon fa fa-angle-left"></i></div>
+						<div class="page-name">
+							<small class="text-uppercase">Previous</small>
+							<h6 class="wizard-step--title">Set up Billing information</h6>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="wizard-nav wizard-nav--next">
+					<div class="next-page">
+						<div class="page-name">
+							<small class="text-uppercase">Next</small>
+							<h6 class="wizard-step--title">Set up Cloud account</h6>
+						</div>
+						<div class="page-arrow"><i class="icon fa fa-angle-right"></i></div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<!-- /.wizard-navigation -->
+	
+</section>
+<!-- /.panel -->

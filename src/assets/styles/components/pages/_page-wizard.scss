@@ -1,40 +1,17 @@
 // PAGE WiZARD
 .page-wizard {
-    // Content container
-    .content-container {
-        flex-direction: column;
+    background-color: $white;
+}
 
-        @include breakpoint(md) {
-            flex-direction: row;
-        }
-    }
 
-    // Sidebar
-    .sidebar {
-        height: auto;
-        border-bottom: 1px solid grey(100);
-        width: 100%;
 
-        @include breakpoint(md) {
-            height: 100vh;
-            border-bottom: 0;
-            width: $sidebar-width;
-        }
-    }
+// Panel wizard
+.panel-wizard {
+    position: relative;
 
-    // Content
-    .content {
-        padding: 0;
-        width: 100%;
-
-        @include breakpoint(md) {
-            width: calc(100vw - #{$sidebar-width});
-        }
-    }
-
-    // Panel
-    .panel-header {
-        padding: $size $size $size * 1.5;
+    // Panel header
+    & > .panel-header {
+        padding: $size;
         border-bottom: 1px solid grey(100);
         
         @include breakpoint(md) {
@@ -42,10 +19,35 @@
         }
     }
 
+    // Panel body
     .panel-body {
-        padding: $size $size $size * 1.5;
+        padding: $size $size $size * 6;
+
         @include breakpoint(md) {
-            padding: $size * 1.9 $size * 2;
+            padding: $size * 1.9 $size * 2 $size * 7;
+        }
+
+        @include breakpoint(lg) {
+            padding: $size * 2.5 $size * 2 $size * 7;
+        }
+
+        @include breakpoint(xxl) {
+            padding: $size * 7 $size * 3 $size * 7;
+        }
+    }
+
+    // Alert
+    .alert {
+        @include transition(top);
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        font-family: $font-light;
+        z-index: 10;
+
+        &.active {
+            top: 0;
         }
     }
 }
@@ -67,6 +69,8 @@
         align-items: center;
         justify-content: center;
         position: relative;
+        margin-top: 0;
+        margin-bottom: 0;
         min-width: 0;
 
         @include breakpoint(sm) {
@@ -82,9 +86,24 @@
                 flex: initial;
             }
 
+            .icon {
+                font-size: $font-size-20;
+            }
+
             &.active {
                 @include breakpoint(sm) {
                     flex: initial;
+                }
+            }
+
+            &.completed {
+                background-color: grey(400);
+                color: $white;
+
+                a {
+                    &::before {
+                        border-left-color: grey(400);
+                    }
                 }
             }
         }
@@ -134,16 +153,16 @@
                     left: 100%;
 
                 }
-                &::after {
-                    border-left: 10px solid grey(100);
-                    margin-left: 1px;
-                    z-index: 1;
-                }
                 &::before {
                     @include transition(border-color);
                     border-left: 10px solid $white;
                     margin-left: 0;
                     z-index: 2;
+                }
+                &::after {
+                    border-left: 10px solid grey(100);
+                    margin-left: 1px;
+                    z-index: 1;
                 }
             }
         }
@@ -193,30 +212,58 @@
             }
         }
 
-        // Hovered and focused step
-        @include hover-focus {
-            cursor: pointer;
-            background-color: $primary;
+        // Completed steps
+        &.completed:not(.step-start) {
+            background-color: grey(100);
 
             &::before {
-                color: $white;
+                content: '\f058';
+                font-family: $font-fa;
+                font-size: $font-size-20;
+                color: $green;
             }
 
             a {
-                color: $white;
-
                 &::before {
-                    border-left-color: $primary;
+                    border-left-color: grey(100);
                 }
                 &::after {
-                    border-left-width: 0;
+                    border-left-color: grey(200);
                 }
+            }
 
-                .wizard-step--title {
+            .wizard-step--title,
+            .wizard-step--subtitle {
+                color: grey(300);
+            }
+
+            // Hovered and focused step
+            @include hover-focus {
+                cursor: pointer;
+                background-color: $primary;
+    
+                &::before {
                     color: $white;
+                }
+    
+                a {
+                    color: $white;
+    
+                    &::before {
+                        border-left-color: $primary;
+                    }
+                    &::after {
+                        border-left-width: 0;
+                    }
+    
+                    .wizard-step--title,
+                    .wizard-step--subtitle {
+                        color: $white;
+                    }
                 }
             }
         }
+
 
         // Step title
         .wizard-step--title {
@@ -231,5 +278,248 @@
             text-transform: uppercase;
             font-size: $font-size-10;
         }
+    }
+}
+
+// Panel steps
+.panel-step {
+    .panel-step--info {
+        margin-bottom: $size * 2;
+
+        @include breakpoint(xxl) {
+            margin-bottom: 0;
+        }
+
+        a {
+            text-decoration: underline;
+    
+            @include hover-focus {
+                color: $primary;
+            }
+        }
+    }
+    
+    .panel-step--title {
+        @include breakpoint(xxl) {
+            margin-top: 0 !important;
+        }
+    }
+
+    .panel-step--subtitle {
+        font-family: $font-light;
+        color: $primary;
+        text-decoration: none !important;
+        font-size: $font-size-18;
+    }
+}
+
+// Wizard navigation
+.wizard-navigation {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $white;
+    z-index: 10;
+}
+.wizard-navs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    
+    li {
+        flex: 1;
+        border-top: 1px solid grey(200);
+
+        &:first-child {
+            border-right: 1px solid grey(200);
+        }
+    }
+
+    // Wizard navs
+    .wizard-nav {
+        display: flex;
+        flex-direction: column;
+        padding: $size / 2;
+
+        @include breakpoint(sm) {
+            padding: $size;
+        }
+
+        @include hover-focus {
+            &.wizard-nav--prev {    
+                .page-name {
+                    transform: translateX(-$size / 2);
+                }
+            }
+            &.wizard-nav--next {
+                .page-name {
+                    transform: translateX($size / 2);
+                }
+            }
+            .page-arrow {
+                transform: scale(1.3);
+                color: $primary;
+            }
+        }
+
+        &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .previous-page,
+        .next-page {
+            display: flex;
+            align-items: center;
+
+            .page-arrow {
+                @include transition(transform color);
+                font-size: 2.4em;
+            }
+            
+            .page-name,
+            .wizard-step--title {
+                font-size: 90%;
+                
+                @include breakpoint(sm) {
+                    font-size: initial;
+                }
+            }
+            
+            .page-name {
+                @include transition(transform);
+            }
+        }
+
+        // Previous
+        &.wizard-nav--prev {
+            align-items: flex-start;
+
+            .page-arrow {
+                margin-right: $size * 1.5;
+            }
+        }
+        
+        // Next
+        &.wizard-nav--next {
+            align-items: flex-end;
+
+            .page-arrow {
+                margin-left: $size * 1.5;
+            }
+
+            .page-name {
+                text-align: right;
+            }
+        }
+    }
+}
+
+// Modal wizard
+.modal-wizard {
+    .panel-wizard {
+        .panel-header {
+            display: none;
+        }
+
+        .wizard-steps {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+    }
+
+    .modal-body {
+        padding: 0 !important;
+    }
+
+    .modal-footer {
+        display: none;
+    }
+}
+
+// Forms
+.form-radio--cloud {
+    margin-bottom: $size;
+    
+    input {
+        &:checked {
+            & + label {
+                border-color: $primary;
+            }
+        }
+    }
+
+    label {
+        @include transition(border-color);
+        align-items: center !important;
+        justify-content: center;
+        width: 100%;
+        min-height: 160px;
+        border: 2px solid grey(200);
+
+        @include breakpoint(md) {
+            min-height: 200px;
+        }
+
+        @include hover-focus {
+            border-color: $primary;
+        }
+
+        &::before {
+            content: none !important;
+        }
+
+        img {
+            width: 100%;
+            max-height: 50px;
+
+            @include breakpoint(sm) {
+                max-height: 40px;
+            }
+
+            @include breakpoint(md) {
+                max-height: 50px;
+            }
+        }
+    }
+
+    // Coming soon
+    &.coming-soon {
+        label {
+            position: relative;
+            pointer-events: none;
+
+            // Text
+            &::after {
+                content: 'Coming soon';
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: $size / 2 $size;
+                background-color: grey(200);
+                color: grey(400);
+            }
+        }
+
+        img {
+            filter: saturate(0%);
+            opacity: 0.3;
+        }
+    }
+}
+
+// Label anchor
+.label-anchor {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+
+    a {
+        text-transform: uppercase;
+        text-decoration: underline;
+        font-size: $font-size-10;
+        color: $primary;
     }
 }

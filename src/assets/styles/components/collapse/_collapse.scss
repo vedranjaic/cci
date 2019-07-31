@@ -1,0 +1,21 @@
+// COLLAPSE
+.collapse {
+    margin-bottom: $size;
+    
+    .collapse-container {
+        @include transition(opacity background-color);
+        opacity: 0;
+    }
+
+    &.collapse-open-true {
+        .collapse-container {
+            opacity: 1;
+        }
+    }
+
+    &.label-help {
+        .collapse-container {
+            background-color: lighten($yellow, 40%);
+        }
+    }
+}

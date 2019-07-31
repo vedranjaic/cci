@@ -1,0 +1,114 @@
+// HERO
+.hero {
+    display: flex;
+    flex-direction: column;
+    background-color: $brand-blue;
+    background: linear-gradient(130deg, $brand-blue 0%, lighten($brand-blue, 10%) 35%, darken($brand-purple, 4%) 100%);
+    // background: linear-gradient(120deg, $brand-purple 0%, darken($blue, 25%) 25%, darken($brand-purple, 4%) 100%);
+    padding-bottom: $size * 10;
+    text-align: center;
+    position: relative;
+
+    @include breakpoint(xxl) {
+        height: 500px;
+    }
+    
+    &::after {
+        content: '';
+        background-image: url(assets/images/hero-bg.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 65%;
+        position: absolute;
+        top: 0;left: 0;right: 0;bottom: 0;
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    .navbar {
+        background-color: transparent;
+        border-bottom: 0;
+        margin-bottom: $size * 2;
+        align-items: center;
+        
+        @include breakpoint(md) {
+            height: auto;
+            padding-top: $size * 2;
+            padding-bottom: $size * 2;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        // Main nav
+        .nav-main {
+            flex: 1;
+            justify-content: flex-end;
+
+            li {
+                margin-left: $size;
+                margin-right: $size;
+
+                a {
+                    @include transition(color);
+                    color: grey(200);
+
+                    @include hover-focus {
+                        color: $white;
+                        text-decoration: underline;
+                    }
+                }
+
+                &.active {
+                    a {
+                        color: $white;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            // Hide on landing page
+            .page-index & {
+                display: none;
+            }
+        }
+
+        .navbar-action.dropdown:not(.user) {
+            display: none;
+        }
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+
+        .hero-title {
+            font-family: $font-bold;
+        }
+    
+        .lead {
+            color: grey(100);
+        }
+    
+        .btn-get-started {
+            border-radius: 30px;
+    
+            .icon {
+                margin-left: $size / 2;
+            }
+        }
+    }
+
+    .branding {
+        @include breakpoint(md) {
+            height: $size * 2.3;
+        }
+    }
+
+    .branding-index {
+        width: 200px;
+        display: inline-block;
+    }
+
+}
