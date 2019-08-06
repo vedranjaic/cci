@@ -122,14 +122,14 @@ $('#temp-help-02-toggle').click(function(e) {
 
 
 
-
+Chart.defaults.scale.gridLines.display = false;
 
 // BAR CHART
 var barChartData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
     datasets: [{
         label: 'Compute',
-        backgroundColor: 'rgba(99, 134, 197, 0.7)',
+        backgroundColor: 'rgba(255,49,81, 0.9)',
         data: [
             randomScalingFactorCompute(),
             randomScalingFactorCompute(),
@@ -146,7 +146,7 @@ var barChartData = {
         ]
     }, {
         label: 'Block volume',
-        backgroundColor: 'rgba(94, 37, 114, 0.7)',
+        backgroundColor: 'rgba(255,49,81, 0.7)',
         data: [
             randomScalingFactorBlock(),
             randomScalingFactorBlock(),
@@ -163,7 +163,7 @@ var barChartData = {
         ]
     }, {
         label: 'Object storage',
-        backgroundColor: 'rgba(74, 185, 177, 0.7)',
+        backgroundColor: 'rgba(255,49,81, 0.5)',
         data: [
             randomScalingFactorObject(),
             randomScalingFactorObject(),
@@ -180,7 +180,7 @@ var barChartData = {
         ]
     }, {
         label: 'Database',
-        backgroundColor: 'rgba(223, 225, 38, 0.7)',
+        backgroundColor: 'rgba(255,49,81, 0.3)',
         data: [
             randomScalingFactorDatabase(),
             randomScalingFactorDatabase(),
@@ -197,7 +197,7 @@ var barChartData = {
         ]
     }, {
         label: 'Java',
-        backgroundColor: 'rgba(225, 38, 72, 0.7)',
+        backgroundColor: 'rgba(255,49,81, 0.1)',
         data: [
             randomScalingFactorJava (),
             randomScalingFactorJava (),
@@ -241,11 +241,11 @@ var config = {
                 randomScalingFactor()
             ],
             backgroundColor: [
-                'rgba(99, 134, 197, 0.7)',
-                'rgba(94, 37, 114, 0.7)',
-                'rgba(74, 185, 177, 0.7)',
-                'rgba(223, 225, 38, 0.7)',
-                'rgba(225, 38, 72, 0.7)',
+                'rgba(255,49,81, 0.9)',
+                'rgba(255,49,81, 0.7)',
+                'rgba(255,49,81, 0.5)',
+                'rgba(255,49,81, 0.3)',
+                'rgba(255,49,81, 0.1)',
             ],
             label: 'Dataset 1'
         }],
@@ -296,9 +296,19 @@ window.onload = function() {
             scales: {
                 xAxes: [{
                     stacked: true,
+                    categoryPercentage: 0.9,
+                    barPercentage: 0.9,
+                    ticks: {
+                        fontColor: "#aaa",
+                        display: false,
+                    }
                 }],
                 yAxes: [{
-                    stacked: true
+                    stacked: true,
+                    display: false,
+                    ticks: {
+                        display: false
+                    }
                 }]
             }
         }

@@ -16,7 +16,9 @@
     }
 
     [class*='col-']:not(:last-child) {
-        border-right: 1px solid grey(200);
+        @include breakpoint(lg) {
+            border-right: 1px solid grey(200);
+        }
     }
 }
 

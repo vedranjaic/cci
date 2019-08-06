@@ -1,0 +1,105 @@
+@@include('assets/components/_head.html')
+
+	<div class="page-dashboard">
+
+		<div class="container">
+			
+			<div class="hero">
+
+				@@include('assets/components/navigation/_navbar-app.html')
+
+				<div class="cost-history">
+					<div class="grid">
+						<div class="col-lg-8">
+							<div class="panel">
+								<header class="panel-header">
+									Cost history
+								</header>
+								<div class="panel-body">
+
+									<canvas id="chartCostHistory" width="400" height="400"></canvas>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="panel">
+								
+								<!-- <canvas id="chartCostThisMonth" width="400" height="400"></canvas> -->
+
+							</div>
+						</div>
+					</div>
+					<!-- /.grid -->
+				</div>
+				<!-- /.cost-history -->
+
+
+			</div>
+			<!-- /.hero -->
+
+			
+			<div class="content-container">
+				
+				@@include('assets/components/_sidebar.html')
+
+				<div class="content">
+					
+					<div class="page-content">
+						
+						<!-- DASHBOARD -->
+						@@include('assets/components/_pages/dashboard/_dashboard.html')
+
+					</div>
+					<!-- /.page-content -->
+					
+					<div class="page-content page-sidebar--true">
+						
+						@@include('assets/components/page/_page-panel.html')
+
+						@@include('assets/components/page/_page-sidebar.html', {
+							"page-sidebar--heading-hidden": "hidden"
+						})
+											
+					</div>
+					<!-- /.page-content -->
+					
+					<div class="page-content">
+						
+						<section class="panel panel-page">
+
+							<header class="panel-header">
+								<h4 class="page-title">Current Spend Cost Centers and Cost Groups</h4>
+							</header>
+							<!-- /.panel-header -->
+						
+							<div class="panel-body">
+						
+								@@include('assets/components/table/_table.html', {
+									"table-class": "table table-hover"
+								})
+						
+							</div>
+							<!-- /.panel-body -->    
+							
+						</section>
+						<!-- /.panel -->
+
+					</div>
+					<!-- /.page-content -->
+
+
+				</div>
+				<!-- /.content -->
+
+			</div>
+			<!-- /.content-container -->
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.page-dashboard -->
+
+
+@@include('assets/components/_footer.html')

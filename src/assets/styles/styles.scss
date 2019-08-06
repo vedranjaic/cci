@@ -92,10 +92,12 @@
 }
 
 $cloud-color: lighten($brand-blue, 78%);
+// $cloud-color: #f3f4f9;
+// $cloud-color: #fff;
 
 @for $i from 1 through 5 {
     .cloud-#{$i} {
-        fill: darken($cloud-color, $i * 5%);
+        fill: darken($cloud-color, $i * 3%);
     }
 }
 

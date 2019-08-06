@@ -1,4 +1,41 @@
 // DASHBOARD
+.page-dashboard {
+    // Hero
+    .hero {
+        padding-bottom: 0;
+        height: auto;
+        background: linear-gradient(130deg, grey(100) 0%, $white 35%, grey(100) 100%);
+
+        // Remove background image
+        &::after {
+            background-image: none;
+        }
+
+        // Navbar
+        .navbar {
+            margin-bottom: 0;
+        }
+    }
+
+    // Cost history
+    .cost-history {
+        padding: $size;
+
+        @include breakpoint(md) {
+            padding: $size * 2;
+        }
+
+        .panel {
+            background-color: rgba($white, 0);
+
+            .panel-body {
+                background-color: transparent;
+                padding: 0;
+            }
+        }
+    }
+}
+
 .dash-graphs {
     margin-bottom: $size-30;
 }
