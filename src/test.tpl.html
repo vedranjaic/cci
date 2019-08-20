@@ -1,0 +1,160 @@
+@@include('assets/components/_head.html')
+
+<div class="page-test">
+	<div class="content-container">
+		@@include('assets/components/_sidebar.html')
+
+		<div class="content">
+			@@include('assets/components/navigation/_navbar-app-test.html') @@include('assets/components/_pages/wizard/_wizard.html')
+
+			<div class="cost-history">
+				<div class="grid">
+					<div class="col-xl-8">
+						<div class="panel panel-transparent">
+							<header class="panel-header">
+								<h2 class="panel-title">
+									Cost history for
+									<span class="dropdown">
+										<a href="#" class="dropdown-toggle">NEOS d.o.o.</a>
+										<ul class="dropdown-menu">
+											<li>
+												<a href="#">Company 2</a>
+											</li>
+											<li>
+												<a href="#">Company 3</a>
+											</li>
+										</ul>
+									</span>
+								</h2>
+								<div class="list-legend" id="legend"></div>
+							</header>
+							<div class="panel-body">
+								<!-- <canvas id="chartCostHistory" width="400" height="450"></canvas> -->
+								<!-- <canvas id="test-chart" width="400" height="450"></canvas> -->
+								<img src="assets/images/chartjs-test.png" class="img-responsive" alt="" />
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xl-4">
+						<div class="panel panel-transparent panel-stats">
+							<header class="panel-header">
+								<h4 class="panel-title">Stats overview</h4>
+
+								<ul class="panel-header--actions list-inline">
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle">Last 12 months</a>
+										<ul class="dropdown-menu dropdown-menu--right">
+											<li><a href="#">24</a></li>
+											<li><a href="#">36</a></li>
+											<li><a href="#">48</a></li>
+										</ul>
+									</li>
+								</ul>
+							</header>
+							<div class="panel-body">
+								<div class="grid">
+									<div class="col-sm-6">
+										<div class="panel panel-basic text-center">
+											<i class="icon fa fa-calendar-check-o"></i>
+											<h6>$25.2k</h6>
+											<span>Current</span>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="panel panel-basic text-center">
+											<i class="icon fa fa-calendar"></i>
+											<h6>$31.7k</h6>
+											<span>Last month</span>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="panel panel-basic text-center">
+											<i class="icon fa fa-line-chart"></i>
+											<h6>$36.6k</h6>
+											<span>Projected</span>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="panel panel-basic text-center">
+											<i class="icon fa fa-money"></i>
+											<h6>$30k</h6>
+											<span>Budget</span>
+										</div>
+									</div>
+								</div>
+								<!-- /.grid -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.grid -->
+			</div>
+			<!-- /.cost-history -->
+
+			<div class="page-content">
+				<section class="panel panel-page">
+					<header class="panel-header">
+						<h4 class="page-title">Current Spend Cost Centers and Cost Groups</h4>
+					</header>
+					<!-- /.panel-header -->
+
+					<div class="panel-body">
+						@@include('assets/components/table/_table.html', { "table-class": "table table-hover" })
+					</div>
+					<!-- /.panel-body -->
+				</section>
+				<!-- /.panel -->
+			</div>
+			<!-- /.page-content -->
+		</div>
+		<!-- /.content -->
+	</div>
+	<!-- /.content-container -->
+</div>
+<!-- /.page-test -->
+
+<!-- @@include('assets/components/_footer-main.html') -->
+
+<div class="drawer-container">
+	<div class="drawer">
+		<header class="drawer-header">
+			<nav class="navbar-tabs">
+				<ul class="nav-tabs">
+					<li role="presentation" class="active">
+						<a href="#">Notifications</a>
+					</li>
+					<li role="presentation">
+						<a href="#">Messages</a>
+					</li>
+					<li role="presentation">
+						<a href="#">Profile</a>
+					</li>
+				</ul>
+			</nav>
+			<a href="#" class="drawer-close">&times;</a>
+		</header>
+		<!-- /.drawer-header -->
+		<div class="drawer-body">
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="notifications">
+					Notifications
+				</div>
+				<div role="tabpanel" class="tab-pane" id="messages">
+					Messages
+				</div>
+				<!-- /.tab-pane -->
+				<div role="tabpanel" class="tab-pane" id="messages">
+					Profile
+				</div>
+				<!-- /.tab-pane -->
+			</div>
+			<!-- /.tab-content -->
+		</div>
+		<!-- /.drawer-body -->
+	</div>
+	<!-- /.drawer -->
+</div>
+<!-- /.drawer-container -->
+
+@@include('assets/components/_footer.html')

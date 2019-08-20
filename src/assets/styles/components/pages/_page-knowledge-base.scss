@@ -1,5 +1,10 @@
 // Knowledge base
 .page-knowledge-base {
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $brand-blue-light;
+    }
+    
     .container {
         @include breakpoint(md) {
             padding-bottom: $size * 4;
@@ -22,6 +27,14 @@
 
         @include breakpoint(xxl) {
             height: auto;
+        }
+
+        .hero-title {
+            color: $brand-blue-light;
+        }
+
+        .branding {
+            padding: 0;
         }
     }
 

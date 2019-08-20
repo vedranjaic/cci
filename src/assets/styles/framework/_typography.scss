@@ -33,7 +33,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-bold;
+  // font-family: $font-bold;
+  color: $brand-blue-light;
 }
 
 .lead {

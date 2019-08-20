@@ -17,6 +17,11 @@
         @include breakpoint(md) {
             padding: $size * 1.9 $size * 2;
         }
+
+        // When inside app
+        .content & {
+            display: none;
+        }
     }
 
     // Panel body
@@ -60,7 +65,7 @@
     padding: 0;
     margin: 0;
     border-bottom: 1px solid grey(100);
-
+    
     // Wizard step
     .wizard-step {
         @include transition(background-color);
@@ -75,6 +80,11 @@
 
         @include breakpoint(sm) {
             justify-content: flex-start;
+        }
+
+        // When inside app
+        .content & {
+            border-top: 1px solid lighten(grey(200), 5%);
         }
 
         // First step
@@ -106,6 +116,13 @@
                     }
                 }
             }
+
+            // When inside app
+            .content & {
+                @if $enable-rounded {
+                    border-top-left-radius: $size;
+                }
+            }
         }
         
         // Except home button
@@ -131,6 +148,19 @@
 
             @include breakpoint(lg) {
                 flex: 1;
+            }
+
+            a {
+                cursor: default;
+            }
+        }
+
+        // When inside app
+        .content & {
+            &.step-finish {
+                @if $enable-rounded {
+                    border-top-right-radius: $size;
+                }
             }
         }
 
@@ -214,19 +244,24 @@
 
         // Completed steps
         &.completed:not(.step-start) {
-            background-color: grey(100);
-
+            // background-color: grey(100);
+            background-color: lighten($green, 30%);
+            
             &::before {
                 content: '\f058';
                 font-family: $font-fa;
                 font-size: $font-size-20;
                 color: $green;
             }
-
+            
             a {
+                cursor: pointer;
+
                 &::before {
-                    border-left-color: grey(100);
+                    // border-left-color: grey(100);
+                    border-left-color: lighten($green, 30%);
                 }
+
                 &::after {
                     border-left-color: grey(200);
                 }
@@ -239,8 +274,8 @@
 
             // Hovered and focused step
             @include hover-focus {
-                cursor: pointer;
-                background-color: $primary;
+                // background-color: $primary;
+                background-color: $green;
     
                 &::before {
                     color: $white;
@@ -250,7 +285,8 @@
                     color: $white;
     
                     &::before {
-                        border-left-color: $primary;
+                        // border-left-color: $primary;
+                        border-left-color: $green;
                     }
                     &::after {
                         border-left-width: 0;
@@ -291,10 +327,11 @@
         }
 
         a {
+            @include transition(color);
             text-decoration: underline;
     
             @include hover-focus {
-                color: $primary;
+                color: $brand-blue;
             }
         }
     }
@@ -307,7 +344,7 @@
 
     .panel-step--subtitle {
         font-family: $font-light;
-        color: $primary;
+        color: $brand-blue-light;
         text-decoration: none !important;
         font-size: $font-size-18;
     }
@@ -315,7 +352,7 @@
 
 // Wizard navigation
 .wizard-navigation {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
     background-color: $white;

@@ -1,9 +1,22 @@
 // PAGE LOGiN
 .page-login {
+    .panel-login {
+        width: 40vw;
+    }
+
     .panel-header {
-        background-color: lighten($brand-blue, 5%) !important;
-        background-image: url(assets/images/neos-pattern.svg);
-        background-size: cover;
+        padding-top: $size * 2 !important;
+        background-color: $white !important;
+        background-image: url(assets/images/cloud-bg.svg);
+        // background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left 0 bottom 10%;
+        border-right: 1px solid grey(100);
+        color: inherit !important;
+    }
+
+    .panel-body {
+        padding: $size * 2;
     }
 
     // Logo

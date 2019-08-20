@@ -1,9 +1,83 @@
+$enable-rounded: true;
+
+// --- [ Colors ] --- //
+
+// --- [ Functional colors ] --- //
+$blue:   #507dff;
+$red:    #ff507d;
+$yellow: #ffd250;
+$green:  #68d5c3;
+
+
+$functional-colors: ();
+$functional-colors: map-merge(
+  (
+    blue:   $blue,
+    red:    $red,
+    yellow: $yellow,
+    green:  $green
+  ),
+  $functional-colors
+);
+
+// --- [ Brand colors ] --- //
+$brand-red:         #ff3151;
+$brand-blue:        #242e45;
+$brand-blue-light:  #a2bad7;
+$brand-purple:      #d9cae9;
+$brand-purple-dark: #5e3d75;
+
+$brand-colors: ();
+$brand-colors: map-merge(
+  (
+    "brand-red":         $brand-red,
+    "brand-blue":        $brand-blue,
+    "brand-blue-light":  $brand-blue-light,
+    "brand-purple":      $brand-purple,
+    "brand-purple-dark": $brand-purple-dark
+  ),
+  $brand-colors
+);
+
+// --- [ Theme colors ] --- //
+$basic:         $white;
+$primary:       $brand-red;
+$secondary:     $blue;
+$success:       $green;
+$info:          $brand-blue-light;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $grey-100;
+$dark:          $grey-600;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    "basic":      $basic,
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
+$sidebar-closed-width: $size * 5.5;
+$menu-item-active-bg-color:    $primary;
+
 $page-sidebar-width: $sidebar-width * 1.735;
 $page-sidebar-profile-width: $sidebar-width * 1.5;
+
 $font-primary:      'Axiforma-Regular';
 $font-bold:         'Axiforma-Bold';
 $font-light:        'Axiforma-Light';
 $font: $font-primary;
+
+$radius:  $size;
 
 $navbar-height: $size * 3.75; // 60px
 

@@ -1,17 +1,32 @@
 // TEMPLATE
 body {
-    font-family: $font-light;
+	font-family: $font-light;
+	// background: linear-gradient(130deg, grey(200) 0%, lighten(grey(200), 20%) 35%, grey(200) 100%);
+}
+
+// Content
+.content {
+	height: auto;
+}
+
+.content-container {
+	height: 100vh;
+
+	.sidebar {
+		height: auto;
+		padding-top: 0;
+		overflow: initial;
+	}
 }
 
 // Page content
 .page-content {
-    align-items: stretch !important;
-    
-    // Page sidebar
-    .page-sidebar {
-        
-        .panel {
-            height: 100%;
-        }
-    }
+	align-items: stretch !important;
+
+	// Page sidebar
+	.page-sidebar {
+		.panel {
+			height: 100%;
+		}
+	}
 }

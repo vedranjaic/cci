@@ -5,6 +5,7 @@
         padding-bottom: 0;
         height: auto;
         background: linear-gradient(130deg, grey(100) 0%, $white 35%, grey(100) 100%);
+        // background: none;
 
         // Remove background image
         &::after {
@@ -14,12 +15,35 @@
         // Navbar
         .navbar {
             margin-bottom: 0;
+
+            .nav-main {
+                a {
+                    color: grey(400);
+
+                    @include hover-focus {
+                        color: grey(400);
+                    }
+                }
+
+                .active {
+                    a {
+                        color: grey(400);
+                    }
+                }
+            }
+        }
+
+        .branding {
+            padding: 0;
         }
     }
 
     // Cost history
     .cost-history {
         padding: $size;
+        padding-bottom: 0 !important;
+        position: relative;
+        z-index: 2;
 
         @include breakpoint(md) {
             padding: $size * 2;
@@ -28,9 +52,32 @@
         .panel {
             background-color: rgba($white, 0);
 
+            .panel-header {
+                text-align-last: left;
+                // padding-left: 0;
+                // padding-right: 0;
+                border-bottom: 0 !important;
+
+                .dropdown {
+                    display: inline-block;
+                    font-family: $font-bold;
+                }
+            }
+
             .panel-body {
                 background-color: transparent;
                 padding: 0;
+            }
+
+            // Panel legend
+            &.panel-legend {
+                .panel-header {
+                    display: none;
+
+                    @include breakpoint(xl) {
+                        display: block;
+                    }
+                }
             }
         }
     }

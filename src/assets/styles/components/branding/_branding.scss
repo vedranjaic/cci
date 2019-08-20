@@ -1,26 +1,39 @@
 // Branding
 .branding {
-    flex-direction: row;
-    height: $size * 2;
+	flex-direction: row;
+	height: $size * 4;
+	padding: $size;
+	width: auto;
 
-    .sidebar-closed & {
-        // width: 100px;
-    }
+	@include breakpoint(sm) {
+		height: $size * 4.5;
+		padding-left: $size * 1.5;
+		padding-right: $size * 2;
+	}
 
-    .branding-index {
-        width: auto !important;
-    }
+	.sidebar-closed & {
+		@include breakpoint(sm) {
+			// padding-left: $size;
+			padding-left: $size;
+			padding-right: $size;
+			justify-content: center;
+		}
+	}
+
+	.branding-index {
+		width: auto !important;
+	}
 }
 
 // Branding sidebar
 .branding-sidebar {
-    display: none;
+	display: none;
 
-    @include breakpoint(sm) {
-        display: flex;
-    }
+	@include breakpoint(sm) {
+		display: flex;
+	}
 
-    img {
-        height: 20px;
-    }
+	img {
+		height: 20px;
+	}
 }

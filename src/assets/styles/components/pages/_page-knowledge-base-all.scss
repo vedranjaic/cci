@@ -1,4 +1,9 @@
 .page-knowledge-base-all {
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $brand-blue-light;
+    }
+    
     .container {
         @include breakpoint(md) {
             padding-bottom: $size * 4;
@@ -36,8 +41,16 @@
             height: initial;
         }
 
+        .hero-title {
+            color: $brand-blue-light;
+        }
+
         .navbar {
             margin-bottom: 0;
+        }
+
+        .branding {
+            padding: 0;
         }
     }
 

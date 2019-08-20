@@ -13,10 +13,12 @@
 
 // CCi components
 @import "components/navbar";
+@import "components/sidebar";
 @import "components/footer-main";
 @import "components/branding/branding";
 @import "components/pages/page-index";
 @import "components/pages/page-dashboard";
+@import "components/pages/page-test";
 @import "components/pages/page-login";
 @import "components/pages/page-wizard";
 @import "components/pages/page-knowledge-base";
@@ -53,6 +55,14 @@
     }
 }
 
+.panel-transparent {
+    .panel-header,
+    .panel-body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 // List numbers
 .list-numbers {
     counter-reset: list-numbers;
@@ -81,6 +91,45 @@
     }
 }
 
+.list-legend {
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-left: 0;
+
+        @include breakpoint(xl) {
+            // flex-direction: column;
+        }
+        
+        li {
+            // flex: 1;
+            margin-left: $size;
+            font-size: $font-size-12;
+            // text-align-last: left;
+            
+            // @include breakpoint(xl) {
+            //     font-size: $font-size-14;
+            //     text-align: left;
+            //     border-bottom: 1px dotted grey(200);
+            //     padding-top: $size;
+            //     padding-bottom: $size;
+            // }
+
+            span {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                margin-right: $size / 2;
+
+                @include border-radius($radius);
+            }
+        }
+    }
+}
+
 .cloud-bg {
     display: block;
 
@@ -92,8 +141,6 @@
 }
 
 $cloud-color: lighten($brand-blue, 78%);
-// $cloud-color: #f3f4f9;
-// $cloud-color: #fff;
 
 @for $i from 1 through 5 {
     .cloud-#{$i} {
@@ -112,11 +159,61 @@ $cloud-color: lighten($brand-blue, 78%);
 
 
 
-.main-menu .menu-items .menu-item {
-    & > a {
-        @include hover {
-            background-color: grey(100);
-            color: grey(400);
+.main-menu {
+    padding: $size;
+
+    .menu-items {
+        .menu-item {
+            & > a {
+                padding-top: $size * 0.75;
+                padding-bottom: $size * 0.75;
+                padding-left: $size-20;
+
+                @include border-radius($radius);
+
+                @include hover-focus {
+                    background-color: grey(100);
+                    color: grey(400);
+                }
+
+                .sidebar-closed & {
+                    padding-left: $size-20;
+                    text-align: center;
+
+                    .menu-item--icon {
+                        margin-right: 0;
+                    }
+                    .menu-item--title {
+                        display: none;
+                    }
+                }
+            }
+
+            &.has-submenu {
+                & > a {
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+
+                .sidebar-closed & {
+                    & > a {
+                        border-bottom: 0;
+                        border-bottom-right-radius: $radius;
+                        border-bottom-left-radius: $radius;
+
+                        &::after {
+                            content: '';
+                        }
+                    }
+                    .submenu-items {
+                        display: none;
+                    }
+                }
+            }
         }
+    }
+
+    .menu-item--icon {
+        display: flex;
     }
 }
