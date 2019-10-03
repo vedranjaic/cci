@@ -1,94 +1,98 @@
 // Knowledge base
 .page-knowledge-base {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $brand-blue-light;
+	}
 
-    h1, h2, h3, h4, h5, h6 {
-        color: $brand-blue-light;
-    }
-    
-    .container {
-        @include breakpoint(md) {
-            padding-bottom: $size * 4;
-        }
-    }
+	.container {
+		@include breakpoint(md) {
+			padding-bottom: $size * 4;
+		}
+	}
 
-    //Template
-    .content {
-        height: auto;
-        overflow-y: initial;
-    }
+	//Template
+	.content {
+		height: auto;
+		overflow-y: initial;
+	}
 
-    .page-content {
-        margin-top: -$size * 5;
-    }
+	.page-content {
+		margin-top: -$size * 5;
+	}
 
-    // Hero
-    .hero {
-        padding-bottom: $size * 7;
+	// Hero
+	.hero {
+		padding-bottom: $size * 7;
 
-        @include breakpoint(xxl) {
-            height: auto;
-        }
+		@include breakpoint(xxl) {
+			height: auto;
+		}
 
-        .hero-title {
-            color: $brand-blue-light;
-        }
+		.hero-title {
+			color: $brand-blue-light;
+		}
 
-        .branding {
-            padding: 0;
-        }
-    }
+		.branding {
+			// padding: 0;
+		}
+	}
 
-    // Panels
-    .panel {
-        margin-bottom: $size;
+	// Panels
+	.panel {
+		margin-bottom: $size;
 
-        @include breakpoint(xl) {
-            margin-bottom: 0;
-        }
+		@include breakpoint(xl) {
+			margin-bottom: 0;
+		}
 
-        .list-group-item {
-            @include hover-focus {
-                color: $primary;
-            }
-        }
-        // .panel-header {
-        //     background-color: $brand-purple-dark;
-        //     color: $white;
-        // }
-    }
+		.list-group-item {
+			@include hover-focus {
+				color: $primary;
+			}
+		}
+		// .panel-header {
+		//     background-color: $brand-purple-dark;
+		//     color: $white;
+		// }
+	}
 
-    // FAQ list
-    .faq-list {
-        margin-top: $size * 2;
+	// FAQ list
+	.faq-list {
+		margin-top: $size * 2;
 
-        @include breakpoint(xxl) {
-            margin-top: $size * 3;
-        }
-        .list-group-item {
-            // border-bottom: 1px dotted grey(200);
-            
-            a {
-                display: block;
-                position: relative;
-                padding-left: 0;
-                padding-right: $size;
-                padding-top: $size;
-                padding-bottom: $size;
+		@include breakpoint(xxl) {
+			margin-top: $size * 3;
+		}
+		.list-group-item {
+			// border-bottom: 1px dotted grey(200);
 
-                &::after {
-                    content: '\f105';
-                    font-family: $font-fa;
-                    position: absolute;
-                    top: 50%;
-                    right: 0;
-                    margin-top: -0.5em;
-                    font-size: 1em;
-                }
+			a {
+				display: block;
+				position: relative;
+				padding-left: 0;
+				padding-right: $size;
+				padding-top: $size;
+				padding-bottom: $size;
 
-                @include hover-focus {
-                    color: $primary;
-                }
-            }
-        }
-    }
+				&::after {
+					content: "\f105";
+					font-family: $font-fa;
+					position: absolute;
+					top: 50%;
+					right: 0;
+					margin-top: -0.5em;
+					font-size: 1em;
+				}
+
+				@include hover-focus {
+					color: $primary;
+				}
+			}
+		}
+	}
 }

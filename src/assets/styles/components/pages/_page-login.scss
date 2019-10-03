@@ -1,26 +1,35 @@
 // PAGE LOGiN
 .page-login {
-    .panel-login {
-        width: 40vw;
-    }
+	.panel-login {
+		width: 40vw;
+	}
 
-    .panel-header {
-        padding-top: $size * 2 !important;
-        background-color: $white !important;
-        background-image: url(assets/images/cloud-bg.svg);
-        // background-size: cover;
-        background-repeat: no-repeat;
-        background-position: left 0 bottom 10%;
-        border-right: 1px solid grey(100);
-        color: inherit !important;
-    }
+	.panel-header {
+		padding-top: $size * 2 !important;
+		background-color: $white !important;
+		background-image: url(../assets/images/cloud-bg.svg);
+		// background-size: cover;
+		background-repeat: no-repeat;
+		background-position: left 0 bottom 20%;
+		border-right: 1px solid grey(100);
+		color: inherit !important;
 
-    .panel-body {
-        padding: $size * 2;
-    }
+		@include breakpoint(sm) {
+			min-width: $size * 14.375; // 230px
+		}
+	}
 
-    // Logo
-    .logo-login {
-        margin-bottom: $size-30;
-    }
+	.panel-body {
+		padding: $size * 2;
+
+		// Button login
+		.btn-success {
+			margin-top: $size * 2;
+		}
+	}
+
+	// Logo
+	.logo-login {
+		margin-bottom: $size-30;
+	}
 }

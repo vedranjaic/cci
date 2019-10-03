@@ -1,145 +1,150 @@
 .page-knowledge-base-all {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $brand-blue-light;
+	}
 
-    h1, h2, h3, h4, h5, h6 {
-        color: $brand-blue-light;
-    }
-    
-    .container {
-        @include breakpoint(md) {
-            padding-bottom: $size * 4;
-        }
-    }
+	.container {
+		@include breakpoint(md) {
+			padding-bottom: $size * 4;
+		}
+	}
 
-    .content {
-        position: relative;
-        height: auto;
-        width: auto;
-        padding-top: $size;
-        padding-bottom: $size;
-        margin-top: $size * 2;
-        margin-left: $size;
-        margin-right: $size;
-        background-color: $white;
-        z-index: 2;
+	.content {
+		position: relative;
+		height: auto;
+		width: auto;
+		padding-top: $size;
+		padding-bottom: $size;
+		margin-top: $size * 2;
+		margin-left: $size;
+		margin-right: $size;
+		background-color: $white;
+		z-index: 2;
 
-        @include breakpoint(md) {
-            padding-top: $size * 2;
-            padding-bottom: $size * 2;
-            margin-left: $size * 2;
-            margin-right: $size * 2;
-        }
-    }
+		@include breakpoint(md) {
+			padding-top: $size * 2;
+			padding-bottom: $size * 2;
+			margin-left: $size * 2;
+			margin-right: $size * 2;
+		}
+	}
 
-    .page-content {
-        margin-bottom: 0;
-    }
+	.page-content {
+		margin-bottom: 0;
+	}
 
-    .hero {
-        padding-bottom: 0;
+	.hero {
+		padding-bottom: 0;
 
-        @include breakpoint(xxl) {
-            height: initial;
-        }
+		@include breakpoint(xxl) {
+			height: initial;
+		}
 
-        .hero-title {
-            color: $brand-blue-light;
-        }
+		.hero-title {
+			color: $brand-blue-light;
+		}
 
-        .navbar {
-            margin-bottom: 0;
-        }
+		.navbar {
+			margin-bottom: 0;
+		}
 
-        .branding {
-            padding: 0;
-        }
-    }
+		.branding {
+			// padding: 0;
+		}
+	}
 
-    .list-group-item {
-        padding-left: 0;
-        padding-right: 0;
+	.list-group-item {
+		padding-left: 0;
+		padding-right: 0;
 
-        &.collapse {
-            margin-bottom: 0;
-        }
+		&.collapse {
+			margin-bottom: 0;
+		}
 
-        .collapse-container {
-            padding-bottom: $size * 2;
-        }
+		.collapse-container {
+			padding-bottom: $size * 2;
+		}
 
-        &.active {
-            a {
-                color: $primary;
-            }
-        }
+		&.active {
+			a {
+				color: $primary;
+			}
+		}
 
-        a {
-            padding-top: $size;
-            padding-bottom: $size;
+		a {
+			padding-top: $size;
+			padding-bottom: $size;
 
-            @include hover-focus {
-                color: $primary;
-            }
-        }
-    }
+			@include hover-focus {
+				color: $primary;
+			}
+		}
+	}
 }
 
 // FAQ
 .faq {
-    padding: $size;
+	padding: $size;
 
-    @include breakpoint(md) {
-        padding: $size * 2;
-    }
+	@include breakpoint(md) {
+		padding: $size * 2;
+	}
 
-    // FAQ Categories
-    .faq-nav {
-        margin-bottom: $size * 2;
-        
-        @include breakpoint(md) {
-            position: sticky;
-            top: $size * 2;
-        }
+	// FAQ Categories
+	.faq-nav {
+		margin-bottom: $size * 2;
 
-        .faq-header {
-            background-color: $white;
-            padding: $size;
-            margin-bottom: $size;
-        }
+		@include breakpoint(md) {
+			position: sticky;
+			top: $size * 2;
+		}
 
-        .faq-title {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-    }
+		.faq-header {
+			background-color: $white;
+			padding: $size;
+			margin-bottom: $size;
+		}
 
-    // FAQ Articles
-    .faq-articles {
-        background-color: $white;
-        padding: $size;
+		.faq-title {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
 
-        @include breakpoint(md) {
-            padding: $size * 2;
-        }
+	// FAQ Articles
+	.faq-articles {
+		background-color: $white;
+		padding: $size;
 
-        .faq-header {
-            margin-bottom: $size * 2;
-        }
+		@include breakpoint(md) {
+			padding: $size * 2;
+		}
 
-        .list-group-item {
-            & > a {
-                padding-left: 0;
-                padding-right: 0;
-                font-size: $font-size-18;
-                font-family: $font;
-            }
+		.faq-header {
+			margin-bottom: $size * 2;
+		}
 
-            ul, ol {
-                li {
-                    margin-top: $size / 4;
-                    margin-bottom: $size / 4;
-                }
-            }
-        }
-    }
+		.list-group-item {
+			& > a {
+				padding-left: 0;
+				padding-right: 0;
+				font-size: $font-size-18;
+				font-family: $font;
+			}
+
+			ul,
+			ol {
+				li {
+					margin-top: $size / 4;
+					margin-bottom: $size / 4;
+				}
+			}
+		}
+	}
 }

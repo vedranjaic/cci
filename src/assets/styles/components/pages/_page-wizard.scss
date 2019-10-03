@@ -1,562 +1,558 @@
 // PAGE WiZARD
 .page-wizard {
-    background-color: $white;
+	background-color: $white;
 }
-
-
 
 // Panel wizard
 .panel-wizard {
-    position: relative;
+	position: relative;
 
-    // Panel header
-    & > .panel-header {
-        padding: $size;
-        border-bottom: 1px solid grey(100);
-        
-        @include breakpoint(md) {
-            padding: $size * 1.9 $size * 2;
-        }
+	// Panel header
+	& > .panel-header {
+		padding: $size;
+		border-bottom: 1px solid grey(100);
 
-        // When inside app
-        .content & {
-            display: none;
-        }
-    }
+		@include breakpoint(md) {
+			padding: $size * 1.9 $size * 2;
+		}
 
-    // Panel body
-    .panel-body {
-        padding: $size $size $size * 6;
+		// When inside app
+		.content & {
+			display: none;
+		}
+	}
 
-        @include breakpoint(md) {
-            padding: $size * 1.9 $size * 2 $size * 7;
-        }
+	// Panel body
+	.panel-body {
+		padding: $size $size $size * 6;
 
-        @include breakpoint(lg) {
-            padding: $size * 2.5 $size * 2 $size * 7;
-        }
+		@include breakpoint(md) {
+			padding: $size * 1.9 $size * 2 $size * 7;
+		}
 
-        @include breakpoint(xxl) {
-            padding: $size * 7 $size * 3 $size * 7;
-        }
-    }
+		@include breakpoint(lg) {
+			padding: $size * 2.5 $size * 2 $size * 7;
+		}
 
-    // Alert
-    .alert {
-        @include transition(top);
-        position: fixed;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        font-family: $font-light;
-        z-index: 10;
+		@include breakpoint(xxl) {
+			padding: $size * 7 $size * 3 $size * 7;
+		}
+	}
 
-        &.active {
-            top: 0;
-        }
-    }
+	// Alert
+	.alert {
+		@include transition(top);
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		font-family: $font-light;
+		z-index: 10;
+
+		&.active {
+			top: 0;
+		}
+	}
 }
 
 // Wizard steps
 .wizard-steps {
-    display: flex;
-    counter-reset: wizard-step-counter;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border-bottom: 1px solid grey(100);
-    
-    // Wizard step
-    .wizard-step {
-        @include transition(background-color);
-        display: flex;
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        margin-top: 0;
-        margin-bottom: 0;
-        min-width: 0;
+	display: flex;
+	counter-reset: wizard-step-counter;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid grey(100);
 
-        @include breakpoint(sm) {
-            justify-content: flex-start;
-        }
+	// Wizard step
+	.wizard-step {
+		@include transition(background-color);
+		display: flex;
+		flex: 1;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		margin-top: 0;
+		margin-bottom: 0;
+		min-width: 0;
 
-        // When inside app
-        .content & {
-            border-top: 1px solid lighten(grey(200), 5%);
-        }
+		@include breakpoint(sm) {
+			justify-content: flex-start;
+		}
 
-        // First step
-        &.step-start {
-            padding: $size 0;
+		// When inside app
+		.content & {
+			border-top: 1px solid lighten(grey(200), 5%);
+		}
 
-            @include breakpoint(sm) {
-                padding: $size;
-                flex: initial;
-            }
+		// First step
+		&.step-start {
+			padding: $size 0;
 
-            .icon {
-                font-size: $font-size-20;
-            }
+			@include breakpoint(sm) {
+				padding: $size;
+				flex: initial;
+			}
 
-            &.active {
-                @include breakpoint(sm) {
-                    flex: initial;
-                }
-            }
+			.icon {
+				font-size: $font-size-20;
+			}
 
-            &.completed {
-                background-color: grey(400);
-                color: $white;
+			&.active {
+				@include breakpoint(sm) {
+					flex: initial;
+				}
+			}
 
-                a {
-                    &::before {
-                        border-left-color: grey(400);
-                    }
-                }
-            }
+			&.completed {
+				background-color: grey(400);
+				color: $white;
 
-            // When inside app
-            .content & {
-                @if $enable-rounded {
-                    border-top-left-radius: $size;
-                }
-            }
-        }
-        
-        // Except home button
-        &:not(.step-start) {
-            counter-increment: wizard-step-counter;
-            
-            &::before {
-                content: counter(wizard-step-counter);
-                padding: $size $size / 2 $size $size * 1.2;
-                
-                @include breakpoint(sm) {
-                    padding: $size $size $size $size * 1.5;
-                }
-            }
+				a {
+					&::before {
+						border-left-color: grey(400);
+					}
+				}
+			}
 
-            @include breakpoint(sm) {
-                flex: initial;
-            }
+			// When inside app
+			.content & {
+				@if $enable-rounded {
+					border-top-left-radius: $size;
+				}
+			}
+		}
 
-            @include breakpoint(md) {
-                flex: initial;
-            }
+		// Except home button
+		&:not(.step-start) {
+			counter-increment: wizard-step-counter;
 
-            @include breakpoint(lg) {
-                flex: 1;
-            }
+			&::before {
+				content: counter(wizard-step-counter);
+				padding: $size $size / 2 $size $size * 1.2;
 
-            a {
-                cursor: default;
-            }
-        }
+				@include breakpoint(sm) {
+					padding: $size $size $size $size * 1.5;
+				}
+			}
 
-        // When inside app
-        .content & {
-            &.step-finish {
-                @if $enable-rounded {
-                    border-top-right-radius: $size;
-                }
-            }
-        }
+			@include breakpoint(sm) {
+				flex: initial;
+			}
 
-        // Except last step
-        &:not(:last-child) {
-            a {
-                min-width: 0;
+			@include breakpoint(md) {
+				flex: initial;
+			}
 
-                &::before,
-                &::after {
-                    content: " ";
-                    display: block;
-                    width: 0;
-                    height: 0;
-                    border-top: 27px solid transparent;
-                    border-bottom: 27px solid transparent;
-                    position: absolute;
-                    top: 50%;
-                    margin-top: -27px;
-                    left: 100%;
+			@include breakpoint(lg) {
+				flex: 1;
+			}
 
-                }
-                &::before {
-                    @include transition(border-color);
-                    border-left: 10px solid $white;
-                    margin-left: 0;
-                    z-index: 2;
-                }
-                &::after {
-                    border-left: 10px solid grey(100);
-                    margin-left: 1px;
-                    z-index: 1;
-                }
-            }
-        }
+			a {
+				cursor: default;
+			}
+		}
 
-        &:not(.active) {
-            .wizard-step--title,
-            .wizard-step--subtitle {
-                display: none;
-                
-                @include breakpoint(lg) {
-                    display: flex;
-                }
-            }
-        }
+		// When inside app
+		.content & {
+			&.step-finish {
+				@if $enable-rounded {
+					border-top-right-radius: $size;
+				}
+			}
+		}
 
-        // Active step
-        &.active {
-            flex: 1;
-            background-color: $primary;
+		// Except last step
+		&:not(:last-child) {
+			a {
+				min-width: 0;
 
-            &::before {
-                color: $white;
-            }
+				&::before,
+				&::after {
+					content: " ";
+					display: block;
+					width: 0;
+					height: 0;
+					border-top: 27px solid transparent;
+					border-bottom: 27px solid transparent;
+					position: absolute;
+					top: 50%;
+					margin-top: -27px;
+					left: 100%;
+				}
+				&::before {
+					@include transition(border-color);
+					border-left: 10px solid $white;
+					margin-left: 0;
+					z-index: 2;
+				}
+				&::after {
+					border-left: 10px solid grey(100);
+					margin-left: 1px;
+					z-index: 1;
+				}
+			}
+		}
 
-            a {
-                color: $white;
+		&:not(.active) {
+			.wizard-step--title,
+			.wizard-step--subtitle {
+				display: none;
 
-                &::before {
-                    border-left-color: $primary;
-                }
-                &::after {
-                    border-left-width: 0;
-                }
+				@include breakpoint(lg) {
+					display: flex;
+				}
+			}
+		}
 
-                .wizard-step--title,
-                .wizard-step--subtitle {
-                    display: none;
+		// Active step
+		&.active {
+			flex: 1;
+			background-color: $primary;
 
-                    @include breakpoint(sm) {
-                        display: flex;
-                    }
-                }
+			&::before {
+				color: $white;
+			}
 
-                .wizard-step--title {
-                    color: $white;
-                }
-            }
-        }
+			a {
+				color: $white;
 
-        // Completed steps
-        &.completed:not(.step-start) {
-            // background-color: grey(100);
-            background-color: lighten($green, 30%);
-            
-            &::before {
-                content: '\f058';
-                font-family: $font-fa;
-                font-size: $font-size-20;
-                color: $green;
-            }
-            
-            a {
-                cursor: pointer;
+				&::before {
+					border-left-color: $primary;
+				}
+				&::after {
+					border-left-width: 0;
+				}
 
-                &::before {
-                    // border-left-color: grey(100);
-                    border-left-color: lighten($green, 30%);
-                }
+				.wizard-step--title,
+				.wizard-step--subtitle {
+					display: none;
 
-                &::after {
-                    border-left-color: grey(200);
-                }
-            }
+					@include breakpoint(sm) {
+						display: flex;
+					}
+				}
 
-            .wizard-step--title,
-            .wizard-step--subtitle {
-                color: grey(300);
-            }
+				.wizard-step--title {
+					color: $white;
+				}
+			}
+		}
 
-            // Hovered and focused step
-            @include hover-focus {
-                // background-color: $primary;
-                background-color: $green;
-    
-                &::before {
-                    color: $white;
-                }
-    
-                a {
-                    color: $white;
-    
-                    &::before {
-                        // border-left-color: $primary;
-                        border-left-color: $green;
-                    }
-                    &::after {
-                        border-left-width: 0;
-                    }
-    
-                    .wizard-step--title,
-                    .wizard-step--subtitle {
-                        color: $white;
-                    }
-                }
-            }
-        }
+		// Completed steps
+		&.completed:not(.step-start) {
+			// background-color: grey(100);
+			background-color: lighten($green, 30%);
 
+			&::before {
+				content: "\f058";
+				font-family: $font-fa;
+				font-size: $font-size-20;
+				color: $green;
+			}
 
-        // Step title
-        .wizard-step--title {
-            margin: 0;
-            white-space: nowrap;
-        }
+			a {
+				cursor: pointer;
 
-        // Step subtitle
-        .wizard-step--subtitle {
-            @extend %text-overflow;
-            font-family: $font-light;
-            text-transform: uppercase;
-            font-size: $font-size-10;
-        }
-    }
+				&::before {
+					// border-left-color: grey(100);
+					border-left-color: lighten($green, 30%);
+				}
+
+				&::after {
+					border-left-color: grey(200);
+				}
+			}
+
+			.wizard-step--title,
+			.wizard-step--subtitle {
+				color: grey(300);
+			}
+
+			// Hovered and focused step
+			@include hover-focus {
+				// background-color: $primary;
+				background-color: $green;
+
+				&::before {
+					color: $white;
+				}
+
+				a {
+					color: $white;
+
+					&::before {
+						// border-left-color: $primary;
+						border-left-color: $green;
+					}
+					&::after {
+						border-left-width: 0;
+					}
+
+					.wizard-step--title,
+					.wizard-step--subtitle {
+						color: $white;
+					}
+				}
+			}
+		}
+
+		// Step title
+		.wizard-step--title {
+			margin: 0;
+			white-space: nowrap;
+		}
+
+		// Step subtitle
+		.wizard-step--subtitle {
+			@extend %text-overflow;
+			font-family: $font-light;
+			text-transform: uppercase;
+			font-size: $font-size-10;
+		}
+	}
 }
 
 // Panel steps
 .panel-step {
-    .panel-step--info {
-        margin-bottom: $size * 2;
+	.panel-step--info {
+		margin-bottom: $size * 2;
 
-        @include breakpoint(xxl) {
-            margin-bottom: 0;
-        }
+		@include breakpoint(xxl) {
+			margin-bottom: 0;
+		}
 
-        a {
-            @include transition(color);
-            text-decoration: underline;
-    
-            @include hover-focus {
-                color: $brand-blue;
-            }
-        }
-    }
-    
-    .panel-step--title {
-        @include breakpoint(xxl) {
-            margin-top: 0 !important;
-        }
-    }
+		a {
+			@include transition(color);
+			text-decoration: underline;
 
-    .panel-step--subtitle {
-        font-family: $font-light;
-        color: $brand-blue-light;
-        text-decoration: none !important;
-        font-size: $font-size-18;
-    }
+			@include hover-focus {
+				color: $brand-blue;
+			}
+		}
+	}
+
+	.panel-step--title {
+		@include breakpoint(xxl) {
+			margin-top: 0 !important;
+		}
+	}
+
+	.panel-step--subtitle {
+		font-family: $font-light;
+		color: $brand-blue-light;
+		text-decoration: none !important;
+		font-size: $font-size-18;
+	}
 }
 
 // Wizard navigation
 .wizard-navigation {
-    position: sticky;
-    bottom: 0;
-    width: 100%;
-    background-color: $white;
-    z-index: 10;
+	position: sticky;
+	bottom: 0;
+	width: 100%;
+	background-color: $white;
+	z-index: 10;
 }
 .wizard-navs {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    
-    li {
-        flex: 1;
-        border-top: 1px solid grey(200);
+	display: flex;
+	list-style: none;
+	padding: 0;
 
-        &:first-child {
-            border-right: 1px solid grey(200);
-        }
-    }
+	li {
+		flex: 1;
+		border-top: 1px solid grey(200);
 
-    // Wizard navs
-    .wizard-nav {
-        display: flex;
-        flex-direction: column;
-        padding: $size / 2;
+		&:first-child {
+			border-right: 1px solid grey(200);
+		}
+	}
 
-        @include breakpoint(sm) {
-            padding: $size;
-        }
+	// Wizard navs
+	.wizard-nav {
+		display: flex;
+		flex-direction: column;
+		padding: $size / 2;
 
-        @include hover-focus {
-            &.wizard-nav--prev {    
-                .page-name {
-                    transform: translateX(-$size / 2);
-                }
-            }
-            &.wizard-nav--next {
-                .page-name {
-                    transform: translateX($size / 2);
-                }
-            }
-            .page-arrow {
-                transform: scale(1.3);
-                color: $primary;
-            }
-        }
+		@include breakpoint(sm) {
+			padding: $size;
+		}
 
-        &.disabled {
-            opacity: 0.5;
-            pointer-events: none;
-        }
+		@include hover-focus {
+			&.wizard-nav--prev {
+				.page-name {
+					transform: translateX(-$size / 2);
+				}
+			}
+			&.wizard-nav--next {
+				.page-name {
+					transform: translateX($size / 2);
+				}
+			}
+			.page-arrow {
+				transform: scale(1.3);
+				color: $primary;
+			}
+		}
 
-        .previous-page,
-        .next-page {
-            display: flex;
-            align-items: center;
+		&.disabled {
+			opacity: 0.5;
+			pointer-events: none;
+		}
 
-            .page-arrow {
-                @include transition(transform color);
-                font-size: 2.4em;
-            }
-            
-            .page-name,
-            .wizard-step--title {
-                font-size: 90%;
-                
-                @include breakpoint(sm) {
-                    font-size: initial;
-                }
-            }
-            
-            .page-name {
-                @include transition(transform);
-            }
-        }
+		.previous-page,
+		.next-page {
+			display: flex;
+			align-items: center;
 
-        // Previous
-        &.wizard-nav--prev {
-            align-items: flex-start;
+			.page-arrow {
+				@include transition(transform color);
+				font-size: 2.4em;
+			}
 
-            .page-arrow {
-                margin-right: $size * 1.5;
-            }
-        }
-        
-        // Next
-        &.wizard-nav--next {
-            align-items: flex-end;
+			.page-name,
+			.wizard-step--title {
+				font-size: 90%;
 
-            .page-arrow {
-                margin-left: $size * 1.5;
-            }
+				@include breakpoint(sm) {
+					font-size: initial;
+				}
+			}
 
-            .page-name {
-                text-align: right;
-            }
-        }
-    }
+			.page-name {
+				@include transition(transform);
+			}
+		}
+
+		// Previous
+		&.wizard-nav--prev {
+			align-items: flex-start;
+
+			.page-arrow {
+				margin-right: $size * 1.5;
+			}
+		}
+
+		// Next
+		&.wizard-nav--next {
+			align-items: flex-end;
+
+			.page-arrow {
+				margin-left: $size * 1.5;
+			}
+
+			.page-name {
+				text-align: right;
+			}
+		}
+	}
 }
 
 // Modal wizard
 .modal-wizard {
-    .panel-wizard {
-        .panel-header {
-            display: none;
-        }
+	.panel-wizard {
+		.panel-header {
+			display: none;
+		}
 
-        .wizard-steps {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-    }
+		.wizard-steps {
+			position: sticky;
+			top: 0;
+			z-index: 10;
+		}
+	}
 
-    .modal-body {
-        padding: 0 !important;
-    }
+	.modal-body {
+		padding: 0 !important;
+	}
 
-    .modal-footer {
-        display: none;
-    }
+	.modal-footer {
+		display: none;
+	}
 }
 
 // Forms
 .form-radio--cloud {
-    margin-bottom: $size;
-    
-    input {
-        &:checked {
-            & + label {
-                border-color: $primary;
-            }
-        }
-    }
+	margin-bottom: $size;
 
-    label {
-        @include transition(border-color);
-        align-items: center !important;
-        justify-content: center;
-        width: 100%;
-        min-height: 160px;
-        border: 2px solid grey(200);
+	input {
+		&:checked {
+			& + label {
+				border-color: $primary;
+			}
+		}
+	}
 
-        @include breakpoint(md) {
-            min-height: 200px;
-        }
+	label {
+		@include transition(border-color);
+		align-items: center !important;
+		justify-content: center;
+		width: 100%;
+		min-height: 160px;
+		border: 2px solid grey(200);
 
-        @include hover-focus {
-            border-color: $primary;
-        }
+		@include breakpoint(md) {
+			min-height: 200px;
+		}
 
-        &::before {
-            content: none !important;
-        }
+		@include hover-focus {
+			border-color: $primary;
+		}
 
-        img {
-            width: 100%;
-            max-height: 50px;
+		&::before {
+			content: none !important;
+		}
 
-            @include breakpoint(sm) {
-                max-height: 40px;
-            }
+		img {
+			width: 100%;
+			max-height: 50px;
 
-            @include breakpoint(md) {
-                max-height: 50px;
-            }
-        }
-    }
+			@include breakpoint(sm) {
+				max-height: 40px;
+			}
 
-    // Coming soon
-    &.coming-soon {
-        label {
-            position: relative;
-            pointer-events: none;
+			@include breakpoint(md) {
+				max-height: 50px;
+			}
+		}
+	}
 
-            // Text
-            &::after {
-                content: 'Coming soon';
-                position: absolute;
-                top: 0;
-                right: 0;
-                padding: $size / 2 $size;
-                background-color: grey(200);
-                color: grey(400);
-            }
-        }
+	// Coming soon
+	&.coming-soon {
+		label {
+			position: relative;
+			pointer-events: none;
 
-        img {
-            filter: saturate(0%);
-            opacity: 0.3;
-        }
-    }
+			// Text
+			&::after {
+				content: "Coming soon";
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: $size / 2 $size;
+				background-color: grey(200);
+				color: grey(400);
+			}
+		}
+
+		img {
+			filter: saturate(0%);
+			opacity: 0.3;
+		}
+	}
 }
 
 // Label anchor
 .label-anchor {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	width: 100%;
 
-    a {
-        text-transform: uppercase;
-        text-decoration: underline;
-        font-size: $font-size-10;
-        color: $primary;
-    }
+	a {
+		text-transform: uppercase;
+		text-decoration: underline;
+		font-size: $font-size-10;
+		color: $primary;
+	}
 }

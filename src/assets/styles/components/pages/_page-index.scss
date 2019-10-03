@@ -1,98 +1,98 @@
 // Landing pre-setup
 .page-index {
-    .container {
-        @include breakpoint(md) {
-            padding-bottom: $size * 4;
-        }
-    }
+	.container {
+		@include breakpoint(md) {
+			padding-bottom: $size * 4;
+		}
+	}
 
-    .content {
-        position: relative;
-        height: auto;
-        width: auto;
-        padding-top: $size;
-        padding-bottom: $size;
-        margin-top: $size * -5;
-        margin-left: $size;
-        margin-right: $size;
-        background-color: $white;
-        z-index: 2;
+	.content {
+		position: relative;
+		height: auto;
+		width: auto;
+		padding-top: $size;
+		padding-bottom: $size;
+		margin-top: $size * -5;
+		margin-left: $size;
+		margin-right: $size;
+		background-color: $white;
+		z-index: 2;
 
-        @include breakpoint(md) {
-            padding-top: $size * 2;
-            padding-bottom: $size * 2;
-            margin-left: $size * 2;
-            margin-right: $size * 2;
-        }
-    }
+		@include breakpoint(md) {
+			padding-top: $size * 2;
+			padding-bottom: $size * 2;
+			margin-left: $size * 2;
+			margin-right: $size * 2;
+		}
+	}
 
-    .hero {
-        .branding {
-            padding: 0;
-        }
+	.hero {
+		.branding {
+			// padding: 0;
+		}
 
-        .hero-title {
-            color: $brand-blue-light;
-        }
-    }
+		.hero-title {
+			color: $brand-blue-light;
+		}
+	}
 
-    .page-content {
-        margin-bottom: 0;
+	.page-content {
+		margin-bottom: 0;
 
-        .grid {
-            div[class*="col-"] {
-                margin-bottom: $size;
+		.grid {
+			div[class*="col-"] {
+				margin-bottom: $size;
 
-                @include breakpoint(md) {
-                    margin-bottom: $size * 2;
-                }
+				@include breakpoint(md) {
+					margin-bottom: $size * 2;
+				}
 
-                @include breakpoint(xl) {
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
+				@include breakpoint(xl) {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
 
-    .landing-card {
-        @include transition(border-color);
-        display: flex;
-        border: 2px solid grey(100);
-        height: 100%;
+	.landing-card {
+		@include transition(border-color);
+		display: flex;
+		border: 2px solid grey(100);
+		height: 100%;
 
-        @include hover-focus {
-            border-color: $primary;
-        }
+		@include hover-focus {
+			border-color: $primary;
+		}
 
-        @include breakpoint(xl) {
-            margin-bottom: 0;
-        }
+		@include breakpoint(xl) {
+			margin-bottom: 0;
+		}
 
-        .landing-card-title {
-            font-size: $font-size-20;
-            color: $brand-blue-light;
+		.landing-card-title {
+			font-size: $font-size-20;
+			color: $brand-blue-light;
 
-            @include breakpoint(sm) {
-                font-size: $font-size-24;
-            }
-        }
-    }
+			@include breakpoint(sm) {
+				font-size: $font-size-24;
+			}
+		}
+	}
 
-    .panel {
-        display: flex;
-        flex-direction: column;
+	.panel {
+		display: flex;
+		flex-direction: column;
 
-        @include breakpoint(sm) {
-            flex-direction: row;
-        }
+		@include breakpoint(sm) {
+			flex-direction: row;
+		}
 
-        .panel-header,
-        .panel-body {
-            text-align: center;
+		.panel-header,
+		.panel-body {
+			text-align: center;
 
-            @include breakpoint(sm) {
-                text-align: left;
-            }
-        }
-    }
+			@include breakpoint(sm) {
+				text-align: left;
+			}
+		}
+	}
 }

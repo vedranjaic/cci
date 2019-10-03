@@ -1,22 +1,22 @@
 // Navbar
 .navbar {
-    margin-bottom: $size;
-    // background: linear-gradient(130deg, $brand-blue 0%, lighten($brand-blue, 10%) 35%, darken($brand-blue, 4%) 100%);
+	margin-bottom: $size;
+	// background: linear-gradient(130deg, $brand-blue 0%, lighten($brand-blue, 10%) 35%, darken($brand-blue, 4%) 100%);
 
-    @include breakpoint(md) {
-        margin-bottom: $size * 2;
-    }
+	@include breakpoint(md) {
+		margin-bottom: $size * 2;
+	}
 
-    @include border-radius($radius);
-    
-    // Navbar actions
-    .navbar-actions {
-        .navbar-action {
-            &.open {
-                .dropdown-toggle {
-                    background-color: transparent;
-                }
-            }
-        }
-    }
+	@include border-radius($radius);
+
+	// Navbar actions
+	.navbar-actions {
+		.navbar-action {
+			&.open {
+				.dropdown-toggle {
+					background-color: transparent;
+				}
+			}
+		}
+	}
 }

@@ -29,8 +29,6 @@
 @import "components/collapse/collapse";
 @import "components/summary-treeview/summary-treeview";
 
-
-
 /////////// TEMP
 /////////////////////////////////
 
@@ -38,182 +36,334 @@
 //     pointer-events: all !important;
 // }
 
+.test {
+	position: relative;
+	margin-bottom: $size * 5;
+	padding: $size;
+
+	&::after {
+		content: "";
+		border-bottom: 1px solid $yellow;
+		display: block;
+		border-bottom-left-radius: $size / 2;
+		border-left: 1px solid $yellow;
+		position: absolute;
+		top: 60%;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		border-right: 1px solid $yellow;
+		border-bottom-right-radius: $size / 2;
+	}
+
+	&::before {
+		content: "";
+		border-top: 1px solid $yellow;
+		display: block;
+		border-top-left-radius: $size / 2;
+		border-left: 1px solid $yellow;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 60%;
+		right: 0;
+		border-right: 1px solid $yellow;
+		border-top-right-radius: $size / 2;
+	}
+}
+
+.panel {
+	@include border-radius($radius / 2);
+
+	.panel-header {
+		@include border-radius-top($radius / 2);
+	}
+
+	.panel-body {
+		@include border-radius-bottom($radius / 2);
+	}
+}
+
 // Visibility
 .visible-sm {
-    display: inline;
+	display: inline;
 
-    @include breakpoint(md) {
-        display: none;
-    }
+	@include breakpoint(md) {
+		display: none;
+	}
 }
 
 .invisible-sm {
-    display: none;
+	display: none;
 
-    @include breakpoint(md) {
-        display: inline;
-    }
+	@include breakpoint(md) {
+		display: inline;
+	}
 }
 
 .panel-transparent {
-    .panel-header,
-    .panel-body {
-        padding-left: 0;
-        padding-right: 0;
-    }
+	.panel-header,
+	.panel-body {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 // List numbers
 .list-numbers {
-    counter-reset: list-numbers;
-    list-style: none;
-    padding-left: $size * 1.5;
+	counter-reset: list-numbers;
+	list-style: none;
+	padding-left: $size * 1.5;
 
-    li {
-        margin-top: $size !important;
-        margin-bottom: $size !important;
-        counter-increment: list-numbers;
+	li {
+		margin-top: $size !important;
+		margin-bottom: $size !important;
+		counter-increment: list-numbers;
 
-        &::before {
-            content: counter(list-numbers);
-            background-color: $green;
-            display: inline-block;
-            width: $size * 1.6;
-            height: $size * 1.6;
-            line-height: $size * 1.7;
-            border-radius: $size * 1.6;
-            margin-right: $size;
-            font-size: $font-size-14;
-            text-align: center;
-            vertical-align: text-bottom;
-            color: $white;
-        }
-    }
+		&::before {
+			content: counter(list-numbers);
+			background-color: $green;
+			display: inline-block;
+			width: $size * 1.6;
+			height: $size * 1.6;
+			line-height: $size * 1.7;
+			border-radius: $size * 1.6;
+			margin-right: $size;
+			font-size: $font-size-14;
+			text-align: center;
+			vertical-align: text-bottom;
+			color: $white;
+		}
+	}
 }
 
 .list-legend {
-    ul {
-        list-style: none;
-        display: flex;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        width: 100%;
-        padding-left: 0;
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		width: 100%;
+		padding-left: 0;
 
-        @include breakpoint(xl) {
-            // flex-direction: column;
-        }
-        
-        li {
-            // flex: 1;
-            margin-left: $size;
-            font-size: $font-size-12;
-            // text-align-last: left;
-            
-            // @include breakpoint(xl) {
-            //     font-size: $font-size-14;
-            //     text-align: left;
-            //     border-bottom: 1px dotted grey(200);
-            //     padding-top: $size;
-            //     padding-bottom: $size;
-            // }
+		@include breakpoint(xl) {
+			// flex-direction: column;
+		}
 
-            span {
-                display: inline-block;
-                width: 10px;
-                height: 10px;
-                margin-right: $size / 2;
+		li {
+			// flex: 1;
+			margin-left: $size;
+			font-size: $font-size-12;
+			// text-align-last: left;
 
-                @include border-radius($radius);
-            }
-        }
-    }
+			// @include breakpoint(xl) {
+			//     font-size: $font-size-14;
+			//     text-align: left;
+			//     border-bottom: 1px dotted grey(200);
+			//     padding-top: $size;
+			//     padding-bottom: $size;
+			// }
+
+			span {
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				margin-right: $size / 2;
+
+				@include border-radius($radius);
+			}
+		}
+	}
 }
 
 .cloud-bg {
-    display: block;
+	display: block;
 
-    @include breakpoint(md) {
-        position: fixed;
-        bottom: 30px;
-        z-index: -1;
-    }
+	@include breakpoint(md) {
+		position: fixed;
+		bottom: 30px;
+		z-index: -1;
+	}
 }
 
 $cloud-color: lighten($brand-blue, 78%);
 
 @for $i from 1 through 5 {
-    .cloud-#{$i} {
-        fill: darken($cloud-color, $i * 3%);
-    }
+	.cloud-#{$i} {
+		fill: darken($cloud-color, $i * 3%);
+	}
+}
+
+.fade {
+	opacity: 0;
+	animation: fadein 300ms ease-in forwards;
+
+	@for $i from 1 through 5 {
+		&:nth-child(#{$i}) {
+			animation-delay: $i * 200ms;
+		}
+	}
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 /////////////////////////////////
 
-
 .neos-alt {
-    path {
-        fill: $primary !important;
-    }
+	path {
+		fill: $primary !important;
+	}
+}
+
+.main-menu {
+	padding: $size;
+
+	.menu-items {
+		.menu-item {
+			& > a {
+				padding-top: $size * 0.75;
+				padding-bottom: $size * 0.75;
+				padding-left: $size-20;
+
+				@include border-radius($radius);
+
+				@include hover-focus {
+					background-color: grey(100);
+					color: grey(400);
+				}
+
+				.sidebar-closed & {
+					padding-left: $size-20;
+					text-align: center;
+
+					.menu-item--icon {
+						margin-right: 0;
+					}
+					.menu-item--title {
+						display: none;
+					}
+				}
+			}
+
+			&.has-submenu {
+				& > a {
+					border-bottom-right-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+
+				.sidebar-closed & {
+					& > a {
+						border-bottom: 0;
+						border-bottom-right-radius: $radius;
+						border-bottom-left-radius: $radius;
+
+						&::after {
+							content: "";
+						}
+					}
+					.submenu-items {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.menu-item--icon {
+		display: flex;
+	}
 }
 
 
+// Action group container
+.action-group-container {
+	h6 {
+		margin-bottom: $size / 2;
+	}
+}
 
-.main-menu {
-    padding: $size;
+// Action groups
+.action-group {
+	display: flex;
+	min-height: $size * 3;
+	padding: $size / 2;
+	margin-bottom: $size * 3;
+	border: 2px dashed grey(200);
+	border-radius: $size * 3;
 
-    .menu-items {
-        .menu-item {
-            & > a {
-                padding-top: $size * 0.75;
-                padding-bottom: $size * 0.75;
-                padding-left: $size-20;
+	// Hide dragging bars
+	.action-move {
+		display: none;
+	}
 
-                @include border-radius($radius);
+	// Chain actions
+	& > li {
+		position: relative;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		z-index: 3;
 
-                @include hover-focus {
-                    background-color: grey(100);
-                    color: grey(400);
-                }
+		& + li {
+			border-radius: 0;
 
-                .sidebar-closed & {
-                    padding-left: $size-20;
-                    text-align: center;
+			&::before {
+				content: '';
+				width: $size;
+				height: $size;
+				background-color: inherit;
+				position: absolute;
+				top: 50%;
+				left: -$size / 2;
+				margin-top: -$size / 2;
+				border-radius: 50%;
+				z-index: 2;
+			}
+		}
 
-                    .menu-item--icon {
-                        margin-right: 0;
-                    }
-                    .menu-item--title {
-                        display: none;
-                    }
-                }
-            }
+		&:last-child {
+			border-top-right-radius: $size * 3;
+			border-bottom-right-radius: $size * 3;
+		}
+	}
+}
 
-            &.has-submenu {
-                & > a {
-                    border-bottom-right-radius: 0;
-                    border-bottom-left-radius: 0;
-                }
+.action-group-actions {
+	padding: 0;
 
-                .sidebar-closed & {
-                    & > a {
-                        border-bottom: 0;
-                        border-bottom-right-radius: $radius;
-                        border-bottom-left-radius: $radius;
+	// Remove delete action
+	.action-remove {
+		display: none;
+	}
 
-                        &::after {
-                            content: '';
-                        }
-                    }
-                    .submenu-items {
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
+	// Show drag hand only in list of avaliable actions
+	.action-group-action {
+		margin-bottom: $size / 4;
 
-    .menu-item--icon {
-        display: flex;
-    }
+		@include hover {
+			cursor: grab;
+		}
+	}
+}
+
+.action-group-action {
+	transform: translate(0, 0);
+
+	& > .icon {
+		margin-right: $size / 4;
+	}
+
+	ul {
+		margin-left: $size;
+
+		.icon {
+			opacity: 0.5;
+		}
+	}
 }

@@ -1,114 +1,116 @@
 // HERO
 .hero {
-    display: flex;
-    flex-direction: column;
-    background-color: $brand-blue;
-    // background: linear-gradient(130deg, $brand-blue 0%, lighten($brand-blue, 10%) 35%, darken($brand-purple, 4%) 100%);
-    background: linear-gradient(120deg, $brand-blue 0%, lighten($brand-blue, 5%) 25%, $brand-blue 100%);
-    padding-bottom: $size * 10;
-    text-align: center;
-    position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: $brand-blue;
+	// background: linear-gradient(130deg, $brand-blue 0%, lighten($brand-blue, 10%) 35%, darken($brand-purple, 4%) 100%);
+	background: linear-gradient(120deg, $brand-blue 0%, lighten($brand-blue, 5%) 25%, $brand-blue 100%);
+	padding-bottom: $size * 10;
+	text-align: center;
+	position: relative;
 
-    @include breakpoint(xxl) {
-        height: 500px;
-    }
-    
-    &::after {
-        content: '';
-        background-image: url(assets/images/hero-bg.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 50% 65%;
-        position: absolute;
-        top: 0;left: 0;right: 0;bottom: 0;
-        opacity: 0.3;
-        z-index: 1;
-    }
+	@include breakpoint(xxl) {
+		height: 500px;
+	}
 
-    .navbar {
-        background-color: transparent;
-        border-bottom: 0;
-        margin-bottom: $size * 2;
-        align-items: center;
-        
-        @include breakpoint(md) {
-            height: auto;
-            padding-top: $size * 2;
-            padding-bottom: $size * 2;
-        }
+	&::after {
+		content: "";
+		background-image: url(../assets/images/hero-bg.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 65%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0.3;
+		z-index: 1;
+	}
 
-        .menu-toggle {
-            display: none;
-        }
+	.navbar {
+		background-color: transparent;
+		border-bottom: 0;
+		margin-bottom: $size * 2;
+		align-items: center;
 
-        // Main nav
-        .nav-main {
-            flex: 1;
-            justify-content: flex-end;
+		@include breakpoint(md) {
+			height: auto;
+			padding-top: $size * 2;
+			padding-bottom: $size * 2;
+		}
 
-            li {
-                margin-left: $size;
-                margin-right: $size;
+		.menu-toggle {
+			display: none;
+		}
 
-                a {
-                    @include transition(color);
-                    color: grey(200);
+		// Main nav
+		.nav-main {
+			flex: 1;
+			justify-content: flex-end;
 
-                    @include hover-focus {
-                        color: $white;
-                        text-decoration: underline;
-                    }
-                }
+			li {
+				margin-left: $size;
+				margin-right: $size;
 
-                &.active {
-                    a {
-                        color: $white;
-                        text-decoration: underline;
-                    }
-                }
-            }
+				a {
+					@include transition(color);
+					color: grey(200);
 
-            // Hide on landing page
-            .page-index & {
-                display: none;
-            }
-        }
+					@include hover-focus {
+						color: $white;
+						text-decoration: underline;
+					}
+				}
 
-        .navbar-action.dropdown:not(.user) {
-            display: none;
-        }
-    }
+				&.active {
+					a {
+						color: $white;
+						text-decoration: underline;
+					}
+				}
+			}
 
-    .hero-content {
-        position: relative;
-        z-index: 2;
+			// Hide on landing page
+			.page-index & {
+				display: none;
+			}
+		}
 
-        .hero-title {
-            font-family: $font-bold;
-        }
-    
-        .lead {
-            color: grey(100);
-        }
-    
-        .btn-get-started {
-            border-radius: 30px;
-    
-            .icon {
-                margin-left: $size / 2;
-            }
-        }
-    }
+		.navbar-action.dropdown:not(.user) {
+			display: none;
+		}
+	}
 
-    .branding {
-        @include breakpoint(md) {
-            height: $size * 2.3;
-        }
-    }
+	.hero-content {
+		position: relative;
+		z-index: 2;
 
-    .branding-index {
-        width: 200px;
-        display: inline-block;
-    }
+		.hero-title {
+			font-family: $font-bold;
+		}
 
+		.lead {
+			color: grey(100);
+		}
+
+		.btn-get-started {
+			border-radius: 30px;
+
+			.icon {
+				margin-left: $size / 2;
+			}
+		}
+	}
+
+	.branding {
+		@include breakpoint(md) {
+			// height: $size * 2.3;
+		}
+	}
+
+	.branding-index {
+		width: 200px;
+		display: inline-block;
+	}
 }
